@@ -1,0 +1,135 @@
+// Variables and Fonts Import
+@use "reset";
+@use "vars" as v;
+@import 'mixins';
+
+// Fonts
+@each $family, $urls in (
+  "Antonio": (
+    "semi-bold": ("/fonts/Antonio/static/Antonio-SemiBold.ttf", 600, normal)
+  ),
+  "Inter": (
+    "light": ("/fonts/Inter/static/Inter-Light.ttf", 300, normal),
+    "regular": ("/fonts/Inter/static/Inter-Regular.ttf", 400, normal)
+  ),
+  "EB Garamond": (
+    "regular": ("/fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf", normal, normal),
+    "italic": ("/public/fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf", normal, italic)
+  )
+) {
+  @each $style, $values in $urls {
+    @font-face {
+      font-family: $family;
+      src: url(nth($values, 1)) format('truetype');
+      font-weight: nth($values, 2);
+      font-style: nth($values, 3);
+    }
+  }
+}
+
+// Setting base font size for easy rem calculations
+html {
+  font-size: 62.5%; // 1rem = 10px
+}
+
+// Global box-sizing, fonts, and body background
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.6rem; // Sets default font size to 16px
+  color: black;
+  background-color: v.$medium;
+  text-align: center;
+}
+
+// Typography - Global Styles
+h1, h2, h3, h4, h5 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h1 { font-size: 2.5rem; } 
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.2rem; }
+h5 { font-size: 1rem; }
+
+p {
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+// Utilities
+a { 
+  text-decoration: none; 
+  color: inherit; // Ensures links use the body's text color
+}
+
+ul, ol { 
+  list-style: none; 
+}
+
+// Layout Styles for root, sections, and containers
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  max-width: v.$app-max-width;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 1rem;
+  overflow-x: hidden;
+}
+
+.section, .container, .header, .footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 800px; // Container max width
+}
+
+// Button Styles - General UI Components
+button {
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  border: 1px solid black;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+
+  &:focus, &:hover, &:active {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+// Responsive Design Adjustments
+@media screen and (max-width: 1024px) {
+  body {
+    font-size: 1.4rem; // Adjust base font size for smaller devices
+  }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+  h4, h5, p { font-size: 1rem; }
+
+  .section, .container {
+    padding: 1.5rem 1rem;
+  }
+}

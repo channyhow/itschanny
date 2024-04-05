@@ -1,0 +1,12 @@
+@use "./../../styles/vars" as v;
+
+.header {
+    background-color: v.$dark;
+    color: #ffffff;
+    padding: 1rem 0;
+    text-align: center;  
+    // Example of a responsive adjustment
+    @media (max-width: 768px) {
+      padding: 0.5rem 0;
+    }
+  }

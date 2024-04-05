@@ -1,0 +1,19 @@
+// Example mixin for media queries
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == 'small' {
+      @media (max-width: 640px) { @content; }
+    }
+    @if $breakpoint == 'medium' {
+      @media (max-width: 768px) { @content; }
+    }
+    @if $breakpoint == 'medium' {
+        @media (max-width: 1440px) { @content; }
+      }  }
+  
+  // Flexbox centering mixin
+  @mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

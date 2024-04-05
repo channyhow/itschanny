@@ -1,0 +1,12 @@
+@use "./../../styles/vars" as v;
+
+.footer {
+  background-color: v.$extradark;
+  color: v.$light;
+  text-align: center;
+  padding: 1rem 0;
+  
+  @media (max-width: 768px) {
+    padding: 0.5rem 0;
+  }
+}

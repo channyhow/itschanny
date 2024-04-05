@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Link to the web app manifest, which provides information about the application in a JSON text file -->
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- Link to an external CSS reset file -->
+  <link rel="stylesheet" href="/src/styles/_reset.css">
+  <!-- Link to Normalize.css -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> -->
+
+  <!-- Meta tag for SEO: describes the content of the page -->
+  <meta name="description" content="A Vite + React + TypeScript app">
+  
+  <!-- Canonical URL to prevent duplicate content issues -->
+  <link rel="canonical" href="https://yourdomain.com">
+
+  <!-- Social media optimization meta tags -->
+  <meta property="og:title" content="Vite + React + TypeScript App" />
+  <meta property="og:description" content="A modern web app built with Vite, React, and TypeScript." />
+  <meta property="og:image" content="https://yourdomain.com/vite.svg" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon: shown in the browser tab -->
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+  <!-- Viewport meta tag for responsive design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page title shown in the browser tab -->
+  <title>Vite + React + TS</title>
+</head>
+<body>
+  <!-- Root element where the React app will mount -->
+  <div id="root"></div>
+
+  <!-- Structured data script for richer indexing by search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Vite + React + TypeScript App",
+    "applicationCategory": "WebApplication",
+    "operatingSystem": "All"
+  }
+  </script>
+  
+  <!-- Main script for the application, type module specifies it's an ES module -->
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

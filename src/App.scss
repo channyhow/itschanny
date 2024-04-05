@@ -1,0 +1,30 @@
+// App.scss
+
+// Ensuring the html and body elements take up the full viewport height and width
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; // Optional: prevents scrollbars, use with caution
+}
+
+// Ensuring the #root element also takes up the full viewport dimensions
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // Full viewport height
+  width: 100vw; // Full viewport width
+  overflow-x: hidden; // Prevent any horizontal overflow
+}
+
+// Styling for the main element to ensure it takes the flexible space between header and footer
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; // Centers content vertically within main
+  align-items: center; // Centers content horizontally within main
+  width: 100%; // Takes the full width of its parent (#root)
+  overflow-x: hidden; // Prevents horizontal overflow
+}

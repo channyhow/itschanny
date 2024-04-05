@@ -1,0 +1,18 @@
+{
+    "short_name": "ReactApp",
+    "name": "Vite + React + TypeScript App",
+    "icons": [
+      {
+        "src": "vite.svg",
+        "sizes": "192x192",
+        "type": "image/svg+xml",
+        "purpose": "any maskable"
+      }
+    ],
+    "start_url": "/index.html",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#ffffff"
+  }
+  
