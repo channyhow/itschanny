@@ -1,0 +1,27 @@
+@use "./../../styles/vars" as v;
+
+.socials {
+ h6{
+  // font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+    // text-transform: uppercase;
+    &:focus,
+    &:hover,
+    &:active {
+      outline: none;
+      color: v.$neonyellow; 
+        font-weight: 500;
+      
+    }
+    span {
+      &:focus,
+      &:hover,
+      &:active {
+        outline: none;
+        color: v.$neonyellow;
+      }
+    }
+  }
+
+  cursor: pointer;
+}

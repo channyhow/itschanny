@@ -1,0 +1,29 @@
+@use "./../../styles/vars" as v;
+
+/* WrapperScroller: Allows for scrolling of content within it */
+.wrapper__scroller {
+  position: relative;
+  z-index: 1;
+  overflow-y: auto; /* Enables vertical scrolling */
+  // margin: 40px 0; /* Ensure it doesn't overlap with the header */
+  // border: 3px solid orange;
+  // min-height: 100vh;
+  // display: flex;
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+.scroll-content {
+  display: flow-root;
+  overflow-y: auto;
+  scroll-behavior: smooth;  
+  flex:1;
+
+  // height: calc(100vh - 40px); /* Adjust based on header height to avoid overlap */
+  // min-height: 100vh;
+  // border: 3px solid blue;
+
+}
+}

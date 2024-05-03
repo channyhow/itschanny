@@ -1,0 +1,47 @@
+@use "./../../styles/vars" as v;
+
+.hero {
+  //   translate: none;
+  //   rotate: none;
+  //   scale: none;
+  //   left: 0px;
+  //   top: 0.001px;
+  //   margin: 0px;
+  //   width: 100%;
+  //   max-height: 704px;
+  //   height: 704px;
+  //   padding: 0px 36px 0px 0px;
+  //   box-sizing: border-box;
+  //   position: absolute;
+  //   transform: translate(0px, 0px);
+  //   border: 2px solid #000; /* Replace with your preferred method of defining colors */
+  // z-index: 1;
+
+  /* Hero: Occupies the viewport height, positioned within PinSpacer */
+  // height: 100%;
+  // height: 100vh;
+  width: 100%;
+  // margin: 0 auto; /* Centered horizontally */
+  // padding: 0 0 40px 0;
+  // border: 3px solid dark red;
+  padding: 40px 0;
+
+ 
+
+  &__inner {
+    position: relative;
+    justify-content: space-between;
+    pointer-events: auto;
+    width: 50%;
+    p {
+      padding: 1em 0;
+    }
+  }
+
+  &__titles {
+    position: relative;
+    width: 100%;  
+    // margin-bottom: 40px;
+
+  }
+}

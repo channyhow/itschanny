@@ -1,0 +1,12 @@
+@use "./../../styles/vars" as v;
+
+/* Wrapper: General container for the app */
+.wrapper {
+  position: relative; /* Serves as the positioning context for fixed/sticky children */
+  width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+flex-direction: column;
+
+}

@@ -1,0 +1,15 @@
+@use "./../../styles/vars" as v;
+
+.home-menu {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  // letter-spacing: 3px;
+  cursor: pointer;
+
+  &:focus, &:hover, &:active {
+    outline: none;
+    // background-color: rgba(255, 255, 255, 0.2);
+    // color: #C082B9;
+background-color: v.$neonyellow;  }
+}

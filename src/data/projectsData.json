@@ -1,0 +1,16 @@
+{
+    "jlalbany": {
+      "name": "jlalbany",
+      "images": [{ "desktop": "./../assets/jlalbany/jlu2024desk.png", "mobile": "./../assets/jlalbany/jlu2024mob.png" }],
+      "description": "Project description here",
+      "techno": "React, CSS",
+      "url": "/jlalbany"
+    },
+    "sasha yoga flow": {
+      "name": "sasha yoga flow",
+      "images": [{ "desktop": "./../assets/sashayogaflow/sashayogaflow desktop.png", "mobile": "./../assets/sashayogaflow/sashayogaflow mobile.png" }],
+      "description": "Another project description",
+      "techno": "Vue, TailwindCSS",
+      "url": "/sashayogaflow"
+    }
+  }

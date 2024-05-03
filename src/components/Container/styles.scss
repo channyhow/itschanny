@@ -1,0 +1,24 @@
+@use "./../../styles/vars" as v;
+
+.container {
+  /* Hero: Occupies the viewport height, positioned within PinSpacer */
+  width: auto;
+  padding: 40px 0;
+
+  // max-width: 800px;
+
+  &__inner {
+    position: relative;
+    pointer-events: auto;
+    width: 100%;
+    p {
+      padding: 1em 0;
+    }
+  }
+
+  &__titles {
+    position: relative;
+    width: 100%;
+    padding-bottom: 10px
+  }
+}

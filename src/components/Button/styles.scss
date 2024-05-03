@@ -1,0 +1,16 @@
+@use "./../../styles/vars" as v;
+
+.button {
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  border: 1px solid black;
+  // font-size: 1rem;
+  // text-transform: uppercase;
+  // letter-spacing: 3px;
+  cursor: pointer;
+
+  &:focus, &:hover, &:active {
+    outline: none;
+    // background-color: rgba(255, 255, 255, 0.2);
+background-color: v.$neonyellow;  }
+}

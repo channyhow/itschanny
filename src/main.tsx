@@ -1,13 +1,23 @@
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App.tsx'
-import './index.css'
+import './styles/index.scss'
 
+// if ('serviceWorker' in navigator) {
+//   window.addEventListener('load', () => {
+//     navigator.serviceWorker.register('/sw.js');
+//   });
+// }
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js');
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').then(function(registration) {
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }, function(err) {
+      console.log('ServiceWorker registration failed: ', err);
+    });
   });
 }
+
 // Get the root element by ID
 const rootElement = document.getElementById('root');
 

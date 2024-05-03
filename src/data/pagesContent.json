@@ -1,0 +1,80 @@
+{
+  "sections": [
+    {
+      "title": "Hi I'm Channy",
+      "id": "home",
+      "sectionColor": "",
+      "containerColor":"#f2ebe3",
+      "color":"#b7b0aa",
+      "pinSpacerColor":"#d6d0c8",
+      "headerColor":"",
+      "footerColor":"",
+      "display": "flex",
+      "flexDirection": "row",
+      "margin": "",
+      "height": "100vh",
+      "justifyContent": "center",
+      "alignItems":"center",
+      "contenu": [
+        "Your local front end developer",
+        "driven by the belief that design can inspire diversity and innovation",
+        "as I continue to learn and grow.",
+        "Let's connect and transform ideas into reality."
+      ]
+    },
+    {
+      "title": "About",
+      "id": "about",
+      "sectionColor": "#f2ebe3",
+      "containerColor":"#F6F1EC",
+      "pinSpacerColor":"#d6d0c8",
+      "color":"#b7b0aa",
+      "headerColor":"",
+      "footerColor":"",
+      "display": "flex",
+      "flexDirection": "column",
+      "margin": "0 40px",
+      "height": "100vh",
+      "justifyContent": "center",
+      "alignItems":"center",
+      "contenu": [ "Originally from Reunion Island, my journey in the past decade has taken me across Asia and Australia, where I developed footwear, merging aesthetics with practicality. The turn of events during the pandemic brought me back to France, prompting a significant career shift towards technology.",
+      "Today, I specialize as a front-end developer, crafting visually appealing and responsive applications. My toolbox includes React, TypeScript, and Sass, with a particular fondness for MUI (Material-UI) for its beauty and functionality. While I dabble in backend technologies like Node.js, Express, and PostgreSQL, my true passion resides in the front-end realm.",
+      "I pride myself on being detail-oriented, a trait that occasionally leads me down the rabbit hole of perfectionism. Yet, it's this very attention to detail that motivates me to strive for excellence in every project I undertake. With a diverse background that spans continents and industries, I bring versatility, creativity, and a meticulous eye to every project.",
+      "If you're seeking a developer who is passionate about creating beautiful, user-friendly digital experiences, let's connect!"
+    ]
+  },
+    {
+      "title": "Projects",
+      "id": "projects",
+      "sectionColor": "",
+      "containerColor":"",
+      "pinSpacerColor":"#d6d0c8",
+      "color":"#b7b0aa",
+      "headerColor":"",
+      "footerColor":"",
+      "display": "flex",
+      "flexDirection": "row",
+      "margin": "",
+      "height": "100vh",
+      "justifyContent": "center",
+      "alignItems":"center"
+    },
+    {
+      "title": "Contact",
+      "id": "contact",
+      "sectionColor": "",
+      "containerColor":"#f2ebe3",
+      "pinSpacerColor":"#d6d0c8",
+      "color":"#b7b0aa",
+      "headerColor":"",
+      "footerColor":"",
+      "display": "flex",
+      "flexDirection": "column",
+      "margin": "",
+      "height": "100vh",
+      "justifyContent": "center",
+      "alignItems":"center"
+
+    }
+  ]
+}

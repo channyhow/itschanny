@@ -1,9 +1,0 @@
-@use "./../../styles/vars";
-
-.body-content {
-  padding: 2rem;
-
-  @media (max-width: 768px) {
-    padding: 1rem;
-  }
-}

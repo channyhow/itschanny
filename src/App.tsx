@@ -1,20 +1,21 @@
-import './App.scss'
-import Header from './components/Header';
-import HomePage from './components/Body';
-import Footer from './components/Footer';
+import Wrapper from "./components/Wrapper";
+import WrapperScroller from "./components/WrapperScroller";
+import Body from "./components/Body";
+import pagesContent from "./data/pagesContent.json";
+// import { getSectionClassNames } from "./utils/classNameGenerator";
+// import { getPinSpacerStyle } from "./utils/styleUtils";
+import { CurrentSectionProvider } from "./components/CurrentSectionProvider";
 
 function App() {
   return (
-    <>
-      <Header />
-      <main>
-        <HomePage />
-        {/* Other components like <AboutPage />, <ContactForm />, etc. can go here */}
-      </main>
-      <Footer />
-    </>
+    <CurrentSectionProvider>
+    <Wrapper>
+      <WrapperScroller>
+          <Body sections={pagesContent.sections} />
+      </WrapperScroller>
+    </Wrapper>
+    </CurrentSectionProvider>
   );
 }
 
-
-export default App
+export default App;

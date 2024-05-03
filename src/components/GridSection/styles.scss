@@ -1,0 +1,63 @@
+@use "./../../styles/vars" as v;
+
+// Base block styling
+
+.section-grid {
+    // background-color: v.$dark;
+  // color: v.$darker;
+  position: relative;
+  z-index: 5;
+  // padding: 62px 0 50px;
+  // margin-bottom: 200px;
+  // border: 5px solid green;
+  padding-bottom: 40px;
+    // color: v.$xdarker;
+
+  h1 {
+padding: 1.5em 0 1em;
+  }
+
+  &__inner {
+    margin: 20px 0;
+  }
+
+  &__images-grid {
+    // display: grid;
+    // grid-template-columns: repeat(
+    //   auto-fill,
+    //   minmax(100px, 1fr)
+    // ); // Adjust for better spacing and item size
+    // gap: 20px; // Increased gap for better visual separation
+  }
+
+  &__subtitle {
+    display: flex;
+
+    
+    h3 {
+      text-align: left;
+      font-weight: 700;
+      // filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.2));
+    }
+  }
+
+  &__image-item {
+    // height: 80vh; // Adjusted height
+    background-size: cover;
+    background-position: center;
+    overflow: hidden; // Ensures the rounded corners are applied
+    transition: transform 0.5s ease; // Smooth transition for hover effect
+    // background-color: v.$extradark;
+    filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.2));
+    transition: filter 0.3s ease; /* Smooth transition for filter changes */
+
+    &:hover {    
+      // filter: drop-shadow(1px 2px 1px rgba(0, 0, 0, 0.5));
+      filter: grayscale(100%); /* Turn the image to black and white on hover */
+
+      transform: scale(
+        1.005
+     ); // Slightly enlarges the item on hover for interaction feedback
+    }
+  }
+}
