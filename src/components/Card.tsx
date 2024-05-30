@@ -54,7 +54,7 @@ const Card = ({data}:CardProps) => {
                   } version`}
                   style={{
                     height: "500px",
-                    border: "2px solid #E2FF00",
+                    border: "2px solid #ceca4d",
                     margin: "0.5rem",
                   }}
                 />
@@ -66,7 +66,7 @@ const Card = ({data}:CardProps) => {
                   } version`}
                   style={{
                     height: "500px",
-                    border: "2px solid #E2FF00",
+                    border: "2px solid #ceca4d",
                     margin: "0.5rem",
                   }}
                 />

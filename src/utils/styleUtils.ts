@@ -2,7 +2,7 @@
 
 export const getPinSpacerStyle = (sectionId:string) => {
     const baseStyle = {
-      backgroundColor: "#E2FF00", // default background color
+      backgroundColor: "#ceca4d", // default background color
       justifyContent: "flex-start",
       color: "black" // default text color
     };

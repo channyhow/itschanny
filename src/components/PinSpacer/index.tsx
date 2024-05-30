@@ -32,6 +32,7 @@ const currentSectionData =pagesContent.sections.find(
     ...style,
     backgroundColor: currentSectionData?.pinSpacerColor || 'hotpink',
     // display: currentSection === 'home' ? 'none' : 'flex',
+    border:'1px solid',
     zIndex: "300",
     display: "flex",
     opacity: isScrolling ? 0 : 0.8, // Change opacity based on scroll state
@@ -57,10 +58,6 @@ const currentSectionData =pagesContent.sections.find(
     };
   }, [currentSection]);
 
-  // If current section is 'home', do not render the PinSpacer
-  // if (currentSection === 'home') {
-  //   return null;
-  // }
   return (
     <div className={className} style={dynamicStyle}>
       {children}

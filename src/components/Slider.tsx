@@ -86,7 +86,7 @@ const Slider = () => {
                   // maxWidth: "100%",
                   objectFit: "contain",
                   margin: "0.5rem",
-                  border:'3px solid #E2FF00'
+                  border:'3px solid #ceca4d'
                 }}
               />{" "}
            
@@ -99,7 +99,7 @@ const Slider = () => {
                   // maxWidth: "100%",
                   objectFit: "contain",
                   margin: "0.5rem",
-                  border:'3px solid #E2FF00'
+                  border:'3px solid #ceca4d'
                 }}
               /> </div>
                 <div

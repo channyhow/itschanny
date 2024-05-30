@@ -55,6 +55,7 @@ export interface ContainerProps {
   className: string;
   marginBottom?: string;
   minWidth?: string;
+  border?: string;
 }
 // Props for sections of a page, could be used in a layout component
 export interface SectionComponentProps {
@@ -147,9 +148,10 @@ export interface ProjectDetails {
   name: string;
   images: ImageInfo[];
   description: string;
-  techno: string;
+  techno: string[];
   url: string;
   date: string;
+  type:string[];
 }
 
 export interface PhotoGalleryProps {

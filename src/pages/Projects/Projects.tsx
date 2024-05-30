@@ -1,18 +1,22 @@
-// import QuiltedImageList from "../../components/PhotoGallery/MuiGridGallery";
-// import ImageTest from "../../components/PhotoGallery/test";
-import ImageTest2 from "../../components/PhotoGallery/test copy";
+import { CSSProperties } from "react";
+import PhotoGallery from "../../components/PhotoGallery/PhotoGallery";
 import { projects } from "../../data/ProjectContent";
+import useCurrentSectionData from "../../hooks/useCurrentSectionData";
+import { CommonPageProps } from "../../types";
 
-const Projects = () => {
-  const containerStyle = {
-    width: "auto", // full width of the viewport
-    // height: "100%", // full height of the viewport, adjust as necessary
+const Projects = ({section}:CommonPageProps) => {
+
+  const sectionData = useCurrentSectionData(section.id);
+
+  const containerStyle: CSSProperties = {
+    // width: "auto", // full width of the viewport
+    maxWidth:'1000px',
     display: "flex",
     flexDirection:'column',
     justifyContent: "space-around",
     alignItems: "center",
-    // border:"2px solid aqua"
     padding: "10px",
+    margin: sectionData?.margin
   };
 
   return (
@@ -20,16 +24,16 @@ const Projects = () => {
 
         <h1
           style={{
-            color: "white",
-            // backgroundColor:'blue',
-            zIndex: "500",
+            color: sectionData?.titleColor,
+            zIndex: "50",
             textAlign:'left',
-            width:'100%'
+            width:'100%',
+            marginBottom:'20px'
           }}
         >
           Projects
         </h1>
-      <ImageTest2 slides={projects} />
+      <PhotoGallery slides={projects} />
     </div>
   );
 };

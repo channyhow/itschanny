@@ -91,13 +91,13 @@ function ContactForm() {
                 marginBottom: '1em',
                 '& .MuiOutlinedInput-root': {
                   '& fieldset': {
-                    borderColor: 'white', // Border color
+                    borderColor: '#CECA48', // Border color
                   },
                   '&:hover fieldset': {
-                    borderColor: 'white', // Border color on hover
+                    borderColor: '#CECA48', // Border color on hover
                   },
                   '&.Mui-focused fieldset': {
-                    borderColor: 'white', // Border color on focus
+                    borderColor: '#CECA48', // Border color on focus
                   },
                   backgroundColor: 'rgb(255,255,255,0.3)', // Background color
                 },
@@ -115,13 +115,13 @@ function ContactForm() {
                 '& .MuiOutlinedInput-root': {
                   backgroundColor: 'rgb(255,255,255,0.3)', // Background color
                   '& fieldset': {
-                    borderColor: 'white',
+                    borderColor: '#CECA48',
                   },
                   '&:hover fieldset': {
-                    borderColor: 'white',
+                    borderColor: '#CECA48',
                   },
                   '&.Mui-focused fieldset': {
-                    borderColor: 'white',
+                    borderColor: '#CECA48',
                   },
                 },
               }}
@@ -140,13 +140,13 @@ function ContactForm() {
                 '& .MuiOutlinedInput-root': {
                   backgroundColor: 'rgb(255,255,255,0.3)', // Background color
                   '& fieldset': {
-                    borderColor: 'white',
+                    borderColor: '#CECA48',
                   },
                   '&:hover fieldset': {
-                    borderColor: 'white',
+                    borderColor: '#CECA48',
                   },
                   '&.Mui-focused fieldset': {
-                    borderColor: 'white',
+                    borderColor: '#CECA48',
                   },
                 },
               }}
@@ -156,8 +156,14 @@ function ContactForm() {
               variant="contained"
               sx={{
                 margin: '1em',
-                backgroundColor: 'rgb(255,255,255,0.3)',
-                color: '#FFF',
+                backgroundColor: '#CECA48',
+                color: '#a07575',
+                fontFamily:'Urbanist',
+                '&:hover': {
+                  backgroundColor: '#a07575', // Set hover background color
+                  // Optional: Change text color on hover if needed
+                  color: 'rgb(209 186 186)', // Changing text color to black for contrast, adjust as needed
+                },
               }}
             >
               Submit

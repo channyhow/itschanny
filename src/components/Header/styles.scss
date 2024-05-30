@@ -14,41 +14,44 @@
 }
 .header-about,
 .header-projects,
-.header-contact, .header-home  {
+.header-contact,
+.header-home {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   width: 100%;
-  position: relative; 
-   h6 {
+  position: relative;
+  h6 {
     padding: 0.75rem 1.5rem;
+    // opacity: 0.5;
     // text-transform: uppercase;
-// font-size: 1.2rem;
-&:focus,
-&:hover,
-&:active {
-  outline: none;
-  color: v.$neonyellow; 
-    font-weight: 500;
-  
-}
-// span {
-//   &:focus,
-//   &:hover,
-//   &:active {
-//     outline: none;
-//     color: v.$neonyellow;
-//   }
-// }
-}
+    // font-size: 1.2rem;
+    &:focus,
+    &:hover,
+    &:active {
+      outline: none;
+      transition: color 0.5s ease;
+      // color: v.$neonyellow;
+      font-weight: 500;
+      opacity: 1;
+      filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    }
+    // span {
+    //   &:focus,
+    //   &:hover,
+    //   &:active {
+    //     outline: none;
+    //     color: v.$neonyellow;
+    //   }
+    // }
+  }
 
-.nav-home,
-.nav-about,
-.nav-projects,
-.nav-contact {
-  display: flex;
-  flex-direction: row;
-  cursor: pointer;
-
+  .nav-home,
+  .nav-about,
+  .nav-projects,
+  .nav-contact {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
   }
 }

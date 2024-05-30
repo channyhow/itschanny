@@ -43,7 +43,7 @@ const Image: React.FC<ImageProps> = ({
 //     alignItems: textAlign === 'center' ? 'center' : textAlign === 'right' ? 'flex-end' : 'flex-start',
 //     // Adjusted alignment based on textAlign for more intuitive styling
 //  justifyContent
-// border:'2px solid #E2FF00',
+// border:'2px solid #ceca4d',
 height:'fit-content',
 width:'fit-content',
 margin:"1rem"

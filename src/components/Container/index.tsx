@@ -1,5 +1,5 @@
 import { ContainerProps } from "../../types";
-import "./styles.scss"; // Assuming you have a separate stylesheet for container
+// import "./styles.scss"; // Assuming you have a separate stylesheet for container
 
 
 const Container: React.FC<ContainerProps> = ({
@@ -19,6 +19,7 @@ const Container: React.FC<ContainerProps> = ({
   flexWrap,
   className,
   marginBottom,
+  border
 }) => {
   const containerStyle: React.CSSProperties = {
     // Ensured correct typing for style object
@@ -38,6 +39,7 @@ const Container: React.FC<ContainerProps> = ({
     flexWrap,
     marginBottom,
     minWidth,
+    border
   };
 
   return (

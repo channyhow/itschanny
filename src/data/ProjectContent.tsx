@@ -8,7 +8,7 @@ import { ProjectDetails } from "../types";
 
 export const projects: ProjectDetails[] = [
   {
-    name: "jlalbany",
+    name: "JL Albany",
     images: [
             {
         src: jldesk,
@@ -18,24 +18,24 @@ export const projects: ProjectDetails[] = [
         objectFit: "contain",
         objectPosition: "",
         backgroundColor: "#e8c328",
-        width: "auto",
-        height: "310px",
+        width: "100%",
+        height: "auto",
       },{
         src: jllogo,
         title: "Logo",
         cols: 1,
         rows: 2,
-        objectFit: "contain",
+        objectFit: "cover",
         objectPosition: "",
         backgroundColor: "#e8c328",
-        width: "",
-        height: "",
+        width: "50%",
+        height: "auto",
       }, {
         src: jlmob,
         title: "Mobile View",
         cols: 1,
         rows: 2,
-        objectFit: "cover",
+        objectFit: "contain",
         objectPosition: "top",
         backgroundColor: "#e8c328",
         width: "100%",
@@ -44,10 +44,11 @@ export const projects: ProjectDetails[] = [
   
    
     ],
-    description: "Portfolio de Jean-Ludovic Albany",
-    techno: "sass, vite, react, typescript",
+    description: "Portfolio",
+    techno: ["sass", "vite", "react", "typescript"],
     url: "/jlalbany",
-    date:'january 2024'
+    date:'january 2024',
+    type:['portfolio', 'advertising', 'minimalist', 'service']
   },
   {
     name: "sasha yoga flow",
@@ -60,8 +61,8 @@ export const projects: ProjectDetails[] = [
         objectFit: "cover",
         objectPosition: "",
         backgroundColor: "#e8c328",
-        width: "auto",
-        height: "310px",
+        width: "100%",
+        height: "auto",
       },
       {
         src: sashalogo,
@@ -70,7 +71,7 @@ export const projects: ProjectDetails[] = [
         rows: 2,
         objectFit: "contain",
         objectPosition: "",
-        width: "100%",
+        width: "50%",
         height: "auto",
         backgroundColor: "#C39C90",
       },
@@ -86,10 +87,11 @@ export const projects: ProjectDetails[] = [
         height: "100%",
       },
     ],
-    description: "Sasha Yoga Flow",
-    techno: "sass, vite, react, typescript",
+    description: "service & booking, mobile reponsiveness",
+    techno: ["sass", "vite", "react", "typescript"],
     url: "/sashayogaflow",
-    date:'february 2024'
+    date:'february 2024',
+    type:['service', 'sport', 'health']
 
   },
 ];

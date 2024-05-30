@@ -2,50 +2,43 @@ import { useState } from "react";
 import Container from "../components/Container";
 import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
 import { HashLink } from "react-router-hash-link";
-import { HomeMenu } from "../components/HomeMenu";
-import pagesContent from "../data/pagesContent.json";
 import { SectionComponentProps } from "../types";
-// import React from "react";
 import useCurrentSectionData from "../hooks/useCurrentSectionData";
+import { useMediaQuery } from "@mui/material";
 
 const Home = ({ section }: SectionComponentProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const sectionData = useCurrentSectionData(section.id);
+  const isMobile = useMediaQuery("(max-width:425px)");
+
+  const skills = [
+    "React",
+    "TypeScript",
+    "Sass",
+    "Node.js",
+    "PostGreSQL",
+    "Express",
+    // "Illustrator",
+  ];
 
   return (
-    <div
-      style={{ display: "flex", width: "60%", justifyContent: "space-between" }}
-    >
+    <div style={{
+      display:'flex',
+      flexDirection:'column',
+      alignItems:'center'
+    }}>
+      {/* main green container */}
       <Container
         display="flex"
         flexDirection="column"
+        margin="1em"
+        minWidth="300px"
+        maxWidth="500px"
+        width="80%" // Responsive width
         backgroundColor={sectionData?.containerColor}
-        padding="2em"
-        // maxWidth="500px"
-        textAlign="left"
-        justifyContent="center"
-        alignItems="center"
-        className={`${section.id}-page__container`}
-      >
-        {/* <nav className={`large-nav_${section.id}`}> */}
-        {pagesContent.sections.slice(1).map((item) => (
-          <HomeMenu key={item.id}>
-            <HashLink smooth to={`#${item.id}`}>
-              <h1 style={{ textAlign: "right" }}>{item.title}</h1>
-            </HashLink>
-          </HomeMenu>
-        ))}
-        {/* </nav> */}
-      </Container>
-      <Container
-        display="flex"
-        flexDirection="column"
-        backgroundColor={sectionData?.containerColor}
-        width="400px"
-        textAlign="left"
-        justifyContent="space-between"
         className={""}
-        padding="2em"
+        padding="1em"
+        border="1px solid"
       >
         <h5 style={{ paddingBottom: "1rem" }}>
           Your local front end developer,
@@ -54,26 +47,35 @@ const Home = ({ section }: SectionComponentProps) => {
           as I continue to learn and grow.
         </h5>
         <HashLink smooth to="#about">
-          <h1 style={{ color: "white" }}>{section.title}</h1>
+          <h1
+            style={{
+              color: "white",
+              textTransform: "lowercase",
+              letterSpacing: "-5px",
+            }}
+          >
+            {section.title}
+          </h1>
         </HashLink>
         <h5
           style={{
             textAlign: "left",
-            backgroundColor: isHovered ? "#E2FF00" : undefined,
+            backgroundColor: isHovered ? "#ceca4d" : undefined,
+            transition: "background-color 0.5s ease",
             display: "flex", // Use flex to align text and icon
-            alignItems: "center", // Align items vertically 
-            width:"auto"
+            alignItems: "center", // Align items vertically
+            width: "auto",
           }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <div>
+          <h5>
             Let’s
             <HashLink smooth to="#contact" style={{ marginRight: "5px" }}>
               <span> connect and transform ideas</span>
             </HashLink>
             into digital reality.
-          </div>
+          </h5>
           <span
             style={{
               display: "inline-flex", // Keeps the icon inline with the text
@@ -88,6 +90,30 @@ const Home = ({ section }: SectionComponentProps) => {
           </span>
         </h5>
       </Container>
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          marginTop: "10px",
+          justifyContent: "space-between",
+          width: "80%", // Match container width
+          margin: "10px auto 0", // Center the div
+        }}
+      >
+        {skills.map((skill) => (
+          <h6
+            key={skill}
+            style={{
+              margin: isMobile ? "0 0.1rem" : "0 0.5rem",
+              fontSize: isMobile ? "50%" : "60%",
+              // flex: "1 1 100px", // Flex properties to expand and shrink
+              textAlign: "center",
+            }}
+          >
+            {skill}
+          </h6>
+        ))}
+      </div>
     </div>
   );
 };

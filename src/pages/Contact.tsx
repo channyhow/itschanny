@@ -1,14 +1,33 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import ContactForm from "../components/ContactForm";
 import { CommonPageProps } from "../types";
+import useCurrentSectionData from "../hooks/useCurrentSectionData";
+import { useMediaQuery } from "@mui/material";
 
-
-const Contact = ({section}:CommonPageProps) => {
+const Contact = ({ section }: CommonPageProps) => {
+  const isMobile = useMediaQuery("(max-width:425px)");
+  const sectionData = useCurrentSectionData(section.id);
+  const containerStyle: CSSProperties = {
+    display: isMobile?"":"flex",
+    margin: sectionData?.margin,
+    backgroundColor: sectionData?.containerColor,
+    color: sectionData?.titleColor,
+    // width: "auto", // full width of the viewport
+    maxWidth: "1000px",
+  };
   return (
-    <React.Fragment>
+    <div style={containerStyle}>
       {" "}
-      <h1 >{section.id}</h1> <ContactForm />
-    </React.Fragment>
+      <h1
+        style={{
+          transform: isMobile ? "" : "rotate(270deg)",
+          transformOrigin: isMobile ? "" : "center center",
+        }}
+      >
+        {section.id}
+      </h1>{" "}
+      <ContactForm />
+    </div>
   );
 };
 
