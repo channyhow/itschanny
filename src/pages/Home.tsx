@@ -31,10 +31,10 @@ const Home = ({ section }: SectionComponentProps) => {
       <Container
         display="flex"
         flexDirection="column"
-        margin="1em"
-        minWidth="300px"
+        margin="1rem"
+        // minWidth="300px"
         maxWidth="500px"
-        width="80%" // Responsive width
+        // width="80%" // Responsive width
         backgroundColor={sectionData?.containerColor}
         className={""}
         padding="1em"
@@ -51,31 +51,33 @@ const Home = ({ section }: SectionComponentProps) => {
             style={{
               color: "white",
               textTransform: "lowercase",
-              letterSpacing: "-5px",
+              letterSpacing: "-2px",
             }}
           >
             {section.title}
           </h1>
         </HashLink>
-        <h5
+        <div
+
+>  
+<h5
           style={{
             textAlign: "left",
             backgroundColor: isHovered ? "#ceca4d" : undefined,
             transition: "background-color 0.5s ease",
-            display: "flex", // Use flex to align text and icon
-            alignItems: "center", // Align items vertically
-            width: "auto",
+            // display: "flex", // Use flex to align text and icon
+            // alignItems: "center", // Align items vertically
+            // flexDirection:"column",
+            // width: "auto",
           }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <h5>
-            Let’s
+            Let’s {' '}
             <HashLink smooth to="#contact" style={{ marginRight: "5px" }}>
-              <span> connect and transform ideas</span>
+              connect and transform ideas
             </HashLink>
             into digital reality.
-          </h5>
           <span
             style={{
               display: "inline-flex", // Keeps the icon inline with the text
@@ -88,16 +90,18 @@ const Home = ({ section }: SectionComponentProps) => {
           >
             <SentimentSatisfiedAltIcon />
           </span>
-        </h5>
+        </h5></div>
+      
       </Container>
       <div
         style={{
           display: "flex",
           flexWrap: "wrap",
           marginTop: "10px",
-          justifyContent: "space-between",
-          width: "80%", // Match container width
-          margin: "10px auto 0", // Center the div
+          width:'100%',
+          justifyContent: "space-evenly",
+          // width: "80%", // Match container width
+          // margin: "10px auto 0", // Center the div
         }}
       >
         {skills.map((skill) => (

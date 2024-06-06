@@ -1,131 +1,113 @@
-import { useState } from "react";
-import jldesk from "./../assets/jlalbany/jlu2024desk.png";
-import jlmob from "./../assets/jlalbany/jlu2024mob.png";
-import sashadesk from "./../assets/sashayogaflow/sashayogaflow desktop.png";
-import sashamob from "./../assets/sashayogaflow/sashayogaflow mobile.png";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { useState, useEffect } from "react";
+import { useSwipeable } from "react-swipeable";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowBackForward from '@mui/icons-material/ArrowForward';
 import { Shell } from "./Shell";
-// import { PageProps } from "../types";
+import { ImageInfo } from "../types";
 
-// interface SliderProps {
-//   Section: string;
-// }
-const slides = [
-  {
-    name: "jlalbany",
-    images: [{ desktop: jldesk, mobile: jlmob }],
-    description: "Project description here",
-    techno: "React, CSS",
-    url: "/jlalbany",
-  },
-  {
-    name: "sasha yoga flow",
-    images: [{ desktop: sashadesk, mobile: sashamob }],
-    description: "Another project description",
-    techno: "Vue, TailwindCSS",
-    url: "/sashayogaflow",
-  },
-];
+interface SliderProps {
+  images: ImageInfo[];
+}
 
-const Slider = () => {
+const Slider = ({ images }: SliderProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setCurrentSlide((prev) => (prev + 1) % images.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev + slides.length - 1) % slides.length);
+    setCurrentSlide((prev) => (prev - 1 + images.length) % images.length);
   };
 
-  const { name, images, description, techno } = slides[currentSlide];
+  const handlers = useSwipeable({
+    onSwipedLeft: nextSlide,
+    onSwipedRight: prevSlide,
+    preventScrollOnSwipe: true,
+    trackMouse: true,
+  });
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowRight") {
+        nextSlide();
+      } else if (event.key === "ArrowLeft") {
+        prevSlide();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <div
       className="slider"
       style={{ textAlign: "center", width: "100%", overflow: "hidden" }}
+      {...handlers}
     >
-      <Shell className={""} display={"flex"} padding={""} width={""} height={""} alignItems='flex-end' scale="" currentSection={""} >
-        <button
-          onClick={prevSlide}
-          style={{ background: "transparent", border: "none" }}
-        >
-          <KeyboardArrowLeftIcon />
-        </button>
+      <Shell
+        className={""}
+        display={"flex"}
+        padding={""}
+        width={""}
+        height={""}
+        flexDirection="column"
+        alignItems="flex-end"
+        scale=""
+        currentSection={""}
+        justifyContent={"center"}
+      >
+        <div style={{width:"100%", display:"flex", justifyContent:"flex-end"}}>
+          <button
+            onClick={prevSlide}
+            style={{ background: "transparent", border: "none" }}
+          >
+            <ArrowBackIcon />
+          </button>{" "}
+          <button
+            onClick={nextSlide}
+            style={{ background: "transparent", border: "none" }}
+          >
+            <ArrowBackForward />
+          </button>
+        </div>
+
         <div
           style={{
-            // maxWidth: "1400px",
-            // minWidth: "1250px",
-            // height: "600px",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             position: "relative",
+margin:'2rem 0'
           }}
         >
           {images.map((img, index) => (
             <div
               key={index}
               style={{
+                display: index === currentSlide ? "block" : "none",
                 width: "100%",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-                padding: "10px",
+                transition: "opacity 0.5s ease",
               }}
-            ><div style={{  display: "flex",
-            flexDirection: "row",}}><img
-                src={img.desktop}
-                alt={`${name} desktop view`}
-                style={{
-                  maxHeight:'700px',
-                  // maxHeight: "100%",
-                  // maxWidth: "100%",
-                  objectFit: "contain",
-                  margin: "0.5rem",
-                  border:'3px solid #ceca4d'
-                }}
-              />{" "}
-           
+            >
               <img
-                src={img.mobile}
-                alt={`${name} mobile view`}
+                src={img.src}
+                alt={img.title}
                 style={{
-                  maxHeight:'700px',
-                  // maxHeight: "100%",
-                  // maxWidth: "100%",
-                  objectFit: "contain",
-                  margin: "0.5rem",
-                  border:'3px solid #ceca4d'
+                  width: img.width,
+                  maxWidth: "1400px",
+                  // maxHeight: "500px",
+                  height: img.height,
+                  objectFit: img.objectFit || "cover",
+                  objectPosition: img.objectPosition || "center",
                 }}
-              /> </div>
-                <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  width: "100%",
-                  // alignItems: "flex-start",
-                  justifyContent: "flex-end",
-                }}
-              >
-                <h4>{name}</h4>
-                <h4>{description}</h4>
-                <h4>{techno}</h4>
-              </div>
+              />
             </div>
           ))}
         </div>
-
-        <button
-          onClick={nextSlide}
-          style={{ background: "transparent", border: "none" }}
-        >
-          <KeyboardArrowRightIcon />
-        </button>
-        {/* <h1>{Section}</h1> */}
       </Shell>
     </div>
   );

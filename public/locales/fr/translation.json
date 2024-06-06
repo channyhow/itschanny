@@ -1,0 +1,33 @@
+{
+    "sections": [
+      {
+        "title": "Salut, je suis Channy",
+        "id": "home",
+        "contenu": [
+          "Votre développeur front-end local",
+          "poussé par la conviction que le design peut inspirer la diversité et l'innovation",
+          "alors que je continue à apprendre et à grandir.",
+          "Connectons-nous et transformons les idées en réalité."
+        ]
+      },
+      {
+        "title": "À propos",
+        "id": "about",
+        "contenu": [
+          "Salut, je suis Channy, originaire de l'île de la Réunion. Au cours de la dernière décennie, mes aventures m'ont mené à travers l'Asie et l'Australie, où j'ai perfectionné mes compétences en conception de chaussures, alliant esthétique et praticité. La pandémie m'a ramené en France et a ouvert un nouveau chapitre dans la technologie.",
+          "Maintenant, je suis développeur et designer front-end basé à Paris, passionné par la création d'applications visuellement attrayantes et réactives. Mon ensemble d'outils comprend React, TypeScript et Sass, avec une affection particulière pour le design propre et fonctionnel. Bien que je plonge occasionnellement dans les technologies back-end comme Node.js, Express et PostgreSQL, mon cœur appartient vraiment au front-end.",
+          "Fluent en anglais et en français, je collabore sans effort dans des environnements diversifiés. Avec un parcours qui s'étend sur différents continents et industries, j'offre une perspective fraîche et une approche polyvalente, apportant un mélange équilibré de créativité et de précision à chaque projet.",
+          "Quand je ne code pas, vous me trouverez en train de courir avec des chiens ou tout autre être vivant, de rester actif ou de profiter du plein air. Je suis toujours désireux d'apprendre et de grandir, prêt à relever de nouveaux défis et à créer des expériences numériques conviviales. Si vous cherchez un développeur dédié et passionné par son métier, connectons-nous !"
+        ]
+      },
+      {
+        "title": "Projets",
+        "id": "projects"
+      },
+      {
+        "title": "Contact",
+        "id": "contact"
+      }
+    ]
+  }
+  

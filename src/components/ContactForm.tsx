@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from "react";
 import {
   TextField,
   Button,
@@ -8,8 +8,8 @@ import {
   DialogContentText,
   DialogActions,
   Grid,
-} from '@mui/material';
-import emailjs from '@emailjs/browser';
+} from "@mui/material";
+import emailjs from "@emailjs/browser";
 
 function ContactForm() {
   const form = useRef<HTMLFormElement | null>(null);
@@ -30,16 +30,16 @@ function ContactForm() {
     try {
       if (form.current) {
         await emailjs.sendForm(
-          'service_hgkesjn',
-          'template_xsgu35l',
+          "service_hgkesjn",
+          "template_xsgu35l",
           form.current,
-          'O8_eni2QDzWuo6roS',
+          "O8_eni2QDzWuo6roS"
         );
         setIsSuccess(true);
         form.current.reset();
       }
     } catch (error) {
-      console.error('Email sending failed:', error);
+      console.error("Email sending failed:", error);
       setIsErrorDialogOpen(true);
     }
   };
@@ -53,146 +53,150 @@ function ContactForm() {
   };
 
   useEffect(() => {
-    window.addEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
     return () => {
-      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener("resize", checkMobile);
     };
   }, []);
 
   return (
-      <Grid
-        item
-        xs={isMobile ? 12 : 6}
-        sm={isMobile ? 6 : 12}
-        md={isMobile ? 6 : 12}
-        lg={isMobile ? 6 : 12}
-        xl={isMobile ? 6 : 12}
-      >
-        <div className={`contact-form ${isMobile ? 'mobile-width' : ''}`}>
-          {isSuccess && (
-            <div style={{ color: 'green', marginBottom: '10px' }}>
-              Thank you for your message!
-            </div>
-          )}
+    <div>
+    <Grid
+      item
+      xs={isMobile ? 12 : 6}
+      sm={isMobile ? 6 : 12}
+      md={isMobile ? 6 : 12}
+      lg={isMobile ? 6 : 12}
+      xl={isMobile ? 6 : 12}
+    >
+      <div className={`contact-form ${isMobile ? "mobile-width" : ""}`}>
+        {isSuccess && (
+          <div style={{ color: "green", marginBottom: "10px" }}>
+            Thank you for your message!
+          </div>
+        )}
 
-          <form
-            ref={form}
-            onSubmit={sendEmail}
-            style={{ display: 'flex', flexDirection: 'column' }}
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          style={{ display: "flex", flexDirection: "column" }}
+        >
+          <TextField
+            id="user_email"
+            label="Email"
+            name="user_email"
+            placeholder="Email…"
+            required
+            variant="outlined"
+            sx={{
+              marginBottom: "1em",
+              "& .MuiOutlinedInput-root": {
+                "& fieldset": {
+                  borderColor: "1px solid black", // Border color
+                },
+                "&:hover fieldset": {
+                  borderColor: "1px solid black", // Border color on hover
+                },
+                "&.Mui-focused fieldset": {
+                  borderColor: "1px solid black", // Border color on focus
+                },
+                backgroundColor: "rgb(255,255,255,0.3)", // Background color
+              },
+            }}
+          />
+          <TextField
+            id="user_name"
+            label="Name"
+            name="user_name"
+            placeholder="Name…"
+            required
+            variant="outlined"
+            sx={{
+              marginBottom: "1em",
+              "& .MuiOutlinedInput-root": {
+                backgroundColor: "rgb(255,255,255,0.3)", // Background color
+                "& fieldset": {
+                  borderColor: "1px solid black",
+                },
+                "&:hover fieldset": {
+                  borderColor: "1px solid black",
+                },
+                "&.Mui-focused fieldset": {
+                  borderColor: "1px solid black",
+                },
+              },
+            }}
+          />
+          <TextField
+            id="user_message"
+            label="Message"
+            name="user_message"
+            placeholder="Message…"
+            required
+            multiline
+            rows={4}
+            variant="outlined"
+            sx={{
+              marginBottom: "1em",
+              "& .MuiOutlinedInput-root": {
+                backgroundColor: "rgb(255,255,255,0.3)", // Background color
+                "& fieldset": {
+                  borderColor: "1px solid black",
+                },
+                "&:hover fieldset": {
+                  borderColor: "1px solid black",
+                },
+                "&.Mui-focused fieldset": {
+                  borderColor: "1px solid black",
+                },
+              },
+            }}
+          />
+          <Button
+            type="submit"
+            variant="contained"
+            sx={{
+              margin: "1em",
+              backgroundColor: "#DD6144",
+              fontSize: "1rem",
+              letterSpacing: "2px",
+              color: "black",
+              fontFamily: "Urbanist",
+              border: "1px solid black",
+              "&:hover": {
+                backgroundColor: "#CECA48", // Set hover background color
+                // Optional: Change text color on hover if needed
+                // color: 'rgb(209 186 186)', // Changing text color to black for contrast, adjust as needed
+              },
+            }}
           >
-            <TextField
-              id="user_email"
-              label="Email"
-              name="user_email"
-              placeholder="Email…"
-              required
-              variant="outlined"
-              sx={{
-                marginBottom: '1em',
-                '& .MuiOutlinedInput-root': {
-                  '& fieldset': {
-                    borderColor: '#CECA48', // Border color
-                  },
-                  '&:hover fieldset': {
-                    borderColor: '#CECA48', // Border color on hover
-                  },
-                  '&.Mui-focused fieldset': {
-                    borderColor: '#CECA48', // Border color on focus
-                  },
-                  backgroundColor: 'rgb(255,255,255,0.3)', // Background color
-                },
-              }}
-            />
-            <TextField
-              id="user_name"
-              label="Name"
-              name="user_name"
-              placeholder="Name…"
-              required
-              variant="outlined"
-              sx={{
-                marginBottom: '1em',
-                '& .MuiOutlinedInput-root': {
-                  backgroundColor: 'rgb(255,255,255,0.3)', // Background color
-                  '& fieldset': {
-                    borderColor: '#CECA48',
-                  },
-                  '&:hover fieldset': {
-                    borderColor: '#CECA48',
-                  },
-                  '&.Mui-focused fieldset': {
-                    borderColor: '#CECA48',
-                  },
-                },
-              }}
-            />
-            <TextField
-              id="user_message"
-              label="Message"
-              name="user_message"
-              placeholder="Message…"
-              required
-              multiline
-              rows={4}
-              variant="outlined"
-              sx={{
-                marginBottom: '1em',
-                '& .MuiOutlinedInput-root': {
-                  backgroundColor: 'rgb(255,255,255,0.3)', // Background color
-                  '& fieldset': {
-                    borderColor: '#CECA48',
-                  },
-                  '&:hover fieldset': {
-                    borderColor: '#CECA48',
-                  },
-                  '&.Mui-focused fieldset': {
-                    borderColor: '#CECA48',
-                  },
-                },
-              }}
-            />
+            Submit
+          </Button>
+        </form>
+
+        <Dialog open={isErrorDialogOpen} onClose={handleCloseErrorDialog}>
+          <DialogTitle>Oopsie Daisy</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              There&rsquo;s something about the email address entered, could you
+              have a quick look?
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
             <Button
-              type="submit"
-              variant="contained"
+              onClick={handleCloseErrorDialog}
               sx={{
-                margin: '1em',
-                backgroundColor: '#CECA48',
-                color: '#a07575',
-                fontFamily:'Urbanist',
-                '&:hover': {
-                  backgroundColor: '#a07575', // Set hover background color
-                  // Optional: Change text color on hover if needed
-                  color: 'rgb(209 186 186)', // Changing text color to black for contrast, adjust as needed
-                },
+                margin: "1em",
+                backgroundColor: "rgb(255,255,255,0.3)",
+                color: "#FFF",
               }}
             >
-              Submit
+              OK
             </Button>
-          </form>
-
-          <Dialog open={isErrorDialogOpen} onClose={handleCloseErrorDialog}>
-            <DialogTitle>Oopsie Daisy</DialogTitle>
-            <DialogContent>
-              <DialogContentText>
-                There&rsquo;s something about the email address entered, could
-                you have a quick look?
-              </DialogContentText>
-            </DialogContent>
-            <DialogActions>
-              <Button
-                onClick={handleCloseErrorDialog}
-                sx={{
-                  margin: '1em',
-                  backgroundColor: 'rgb(255,255,255,0.3)',
-                  color: '#FFF',
-                }}
-              >
-                OK
-              </Button>
-            </DialogActions>
-          </Dialog>
-        </div>
-      </Grid>
+          </DialogActions>
+        </Dialog>
+      </div>
+    </Grid></div>
   );
 }
 

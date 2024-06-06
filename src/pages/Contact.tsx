@@ -12,8 +12,11 @@ const Contact = ({ section }: CommonPageProps) => {
     margin: sectionData?.margin,
     backgroundColor: sectionData?.containerColor,
     color: sectionData?.titleColor,
-    // width: "auto", // full width of the viewport
-    maxWidth: "1000px",
+    width: "100%", // full width of the viewport
+    maxWidth: "1200px",
+    justifyContent:"center",
+    padding: "10px",
+
   };
   return (
     <div style={containerStyle}>

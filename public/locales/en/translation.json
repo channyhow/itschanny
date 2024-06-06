@@ -1,0 +1,33 @@
+{
+    "sections": [
+      {
+        "title": "Hi I'm Channy",
+        "id": "home",
+        "contenu": [
+          "Your local front end developer",
+          "driven by the belief that design can inspire diversity and innovation",
+          "as I continue to learn and grow.",
+          "Let's connect and transform ideas into reality."
+        ]
+      },
+      {
+        "title": "About",
+        "id": "about",
+        "contenu": [
+          "Hi, I'm Channy, originally from Reunion Island. Over the past decade, my adventures have taken me across Asia and Australia, where I honed my skills in footwear design, blending aesthetics with practicality. The pandemic brought me back to France and opened up a new chapter in technology.",
+          "Now, I'm a Paris-based front-end developer and designer, passionate about creating visually appealing and responsive applications. My toolkit includes React, TypeScript, and Sass, with a particular fondness for clean design and functionality. While I occasionally dive into backend technologies like Node.js, Express, and PostgreSQL, my heart truly belongs to the front-end.",
+          "Fluent in both English and French, I collaborate effortlessly in diverse environments. With a background that spans different continents and industries, I offer a fresh perspective and a versatile approach, bringing a balanced blend of creativity and precision to every project.",
+          "When I'm not coding, you'll find me running with dogs or any other living being, staying active, or enjoying the outdoors. I'm always eager to learn and grow, ready to tackle new challenges and create user-friendly digital experiences. If you're looking for a developer who is dedicated and passionate about their craft, let's connect!"
+        ]
+      },
+      {
+        "title": "Projects",
+        "id": "projects"
+      },
+      {
+        "title": "Contact",
+        "id": "contact"
+      }
+    ]
+  }
+  

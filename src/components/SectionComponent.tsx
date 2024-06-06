@@ -1,82 +1,56 @@
-import { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import Section from "./Section";
-// import Container from "./Container";
 import { SectionComponentProps } from "../types";
 import { PageContent } from "../types/pageComponents";
 import useSectionObserver from "../hooks/useSectionObserver";
 
-const SectionComponent = ({
-  section,
-  className,
-  currentSection,
-  updateSection,
-}: SectionComponentProps) => {
-  const sectionRef = useRef(null);
+const SectionComponent = React.forwardRef<HTMLElement, SectionComponentProps>(
+  ({ section, className, currentSection, updateSection }, ref) => {
+    const sectionRef = useRef<HTMLElement>(null);
 
-  const handleSectionVisible = useCallback(
-    (visibleId: string) => {
-      updateSection(visibleId);
-    },
-    [updateSection]
-  );
+    const handleSectionVisible = useCallback(
+      (visibleId: string) => {
+        updateSection(visibleId);
+      },
+      [updateSection]
+    );
 
-  useSectionObserver(sectionRef, section.id, handleSectionVisible);
+    useSectionObserver(sectionRef, section.id, handleSectionVisible);
 
-  const ContentComponent =
-    PageContent[section.id.charAt(0).toUpperCase() + section.id.slice(1)];
+    const ContentComponent =
+      PageContent[section.id.charAt(0).toUpperCase() + section.id.slice(1)];
 
-  useEffect(() => {
-    console.log(`Current section updated to: ${currentSection}`);
-  }, [currentSection]);
+    useEffect(() => {
+      console.log(`Current section updated to: ${currentSection}`);
+    }, [currentSection]);
 
-  if (!ContentComponent) {
-    console.error(`No component found for section ID: ${section.id}`);
-    return <div>No content available for this section.</div>;
-  }
+    if (!ContentComponent) {
+      console.error(`No component found for section ID: ${section.id}`);
+      return <div>No content available for this section.</div>;
+    }
 
-  return (
-    <Section
-      ref={sectionRef}
-      className={className}
-      backgroundColor={section.sectionColor}
-      id={section.id}
-      title={section.title}
-      height={section.height}
-      minHeight="600px"
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-      alignItems={section.alignItems}
-      sectionRef={sectionRef}
-    >
-      {/* <Container
-        display={section.display}
-        textAlign="center"
-        justifyContent={section.justifyContent}
-        className={`container-${section.id}`}
-        flexDirection={section.flexDirection}
-        width={"auto"}
-        margin={section.margin}
+    return (
+      <Section
+        ref={ref || sectionRef}
+        className={className}
+        backgroundColor={section.sectionColor}
+        id={section.id}
+        title={section.title}
         height={section.height}
-        // backgroundColor={section.containerColor}
-        backgroundColor={""}
-
-        padding="1em"
-        // maxWidth={""}
-        // marginBottom={""}
-        // minWidth={""}
+        minHeight="600px"
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
         alignItems={section.alignItems}
-      > */}
-      
+      >
         <ContentComponent
           section={section}
           sectionId={section.id}
           currentSection={currentSection}
-          
         />
-      {/* </Container> */}
-    </Section>
-  );
-};
+      </Section>
+    );
+  }
+);
 
 export default SectionComponent;

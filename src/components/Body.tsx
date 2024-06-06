@@ -1,12 +1,12 @@
-import SectionComponent from "./SectionComponent"; // Adjust the import path as needed
-import { BodyContentProps } from "../types";
-import Footer from "./Footer";
-import Header from "./Header";
-import PinSpacer from "./PinSpacer";
 import { useCurrentSection } from "../hooks/useCurrentSection";
 import { getClassName } from "../utils/classNameGenerator";
 import useAllSectionObservers from "../hooks/useAllSectionObservers";
 import { useMediaQuery } from "@mui/material";
+import Footer from "./Footer";
+import Header from "./Header";
+import PinSpacer from "./PinSpacer";
+import SectionComponent from "./SectionComponent";
+import { BodyContentProps } from "../types";
 
 function Body({ sections }: BodyContentProps) {
   const { currentSection, updateSection } = useCurrentSection();
@@ -21,7 +21,7 @@ function Body({ sections }: BodyContentProps) {
         flexDirection: "column",
         justifyContent: "center",
         overflow: "hidden",
-        alignItems: isMobile ? "center":""
+        alignItems: isMobile ? "center" : "",
       }}
     >
       <PinSpacer
@@ -29,10 +29,10 @@ function Body({ sections }: BodyContentProps) {
         style={{
           justifyContent: isMobile ? "center" : "flex-start",
           position: "fixed",
-          width:  isMobile ? "80%": "auto", // Ensure width is 100% for mobile
+          width: isMobile ? "80%" : "auto",
           top: "20px",
-          left: isMobile ? "" : "20px", // Center horizontally for mobile
-          textAlign: isMobile ? "center" : "left", // Ensure text is centered for mobile
+          left: isMobile ? "" : "20px",
+          textAlign: isMobile ? "center" : "left",
         }}
         currentSection={currentSection}
       >
@@ -53,12 +53,12 @@ function Body({ sections }: BodyContentProps) {
       <PinSpacer
         className={getClassName("pinSpacer", currentSection)}
         style={{
-          justifyContent: isMobile ? "center" : "flex-end", // Center content on mobile
+          justifyContent: isMobile ? "center" : "flex-end",
           position: "fixed",
-          width:  isMobile ? "80%": "auto", // Ensure width is 100% for mobile
+          width: isMobile ? "80%" : "auto",
           bottom: "20px",
-          right: isMobile ? "" : "20px", // Center horizontally for mobile
-          textAlign: isMobile ? "center" : "right", // Ensure text is centered for mobile
+          right: isMobile ? "" : "20px",
+          textAlign: isMobile ? "center" : "right",
         }}
         currentSection={currentSection}
       >

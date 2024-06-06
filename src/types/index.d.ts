@@ -8,30 +8,31 @@ export interface GridConfig {
 }
 
 // Extend React.HTMLProps for common HTML element props and add custom ones
-export interface SectionProps extends React.HTMLProps<HTMLElement> {
-  sectionRef: React.RefObject<HTMLDivElement>;
-  // current: React.RefObject<HTMLDivElement>;
-  // isActive: boolean; // More explicit than 'current' for indicating active state
-  backgroundColor?: string;
-  flexDirection?: "row" | "column";
-  justifyContent?: "flex-start" | "center" | "flex-end" | "space-between";
-  alignItems?: "flex-start" | "center" | "flex-end";
-  flexWrap?: "wrap" | "nowrap" | "wrap-reverse";
-  minHeight?: string;
-  display?: string;
-  padding?: string;
-  id: string;
-  title: string;
-  sectionColor?: string;
-  containerColor?: string;
-  pinSpacerColor?: string;
-  headerColor?: string;
-  footerColor?: string;
-  margin?: string;
-  children: React.ReactNode;
-  height?: string;
-  className?: string;
-}
+// export interface SectionProps extends React.HTMLProps<HTMLElement> {
+//   sectionRef: React.RefObject<HTMLDivElement>;
+//   // current: React.RefObject<HTMLDivElement>;
+//   // isActive: boolean; // More explicit than 'current' for indicating active state
+//   backgroundColor?: string;
+//   flexDirection?: "row" | "column";
+//   justifyContent?: "flex-start" | "center" | "flex-end" | "space-between";
+//   alignItems?: "flex-start" | "center" | "flex-end";
+//   flexWrap?: "wrap" | "nowrap" | "wrap-reverse";
+//   minHeight?: string;
+//   display?: string;
+//   padding?: string;
+//   id: string;
+//   title: string;
+//   sectionColor?: string;
+//   containerColor?: string;
+//   pinSpacerColor?: string;
+//   headerColor?: string;
+//   footerColor?: string;
+//   margin?: string;
+//   children: React.ReactNode;
+//   height?: string;
+//   className?: string;
+//   // sectionRef, children
+// }
 export interface ContainerProps {
   height?: string; // e.g., '75vh', '500px'
   title?: string;
@@ -95,10 +96,15 @@ export interface ShellProps extends WrapperProps {
   alignItems: string;
   padding?: string;
   width?: string;
+  maxWidth?: string;
   height?: string;
   scale?: string;
   currentSection: string;
   className: string;
+}
+
+export interface WrapperScrollerProps{
+children
 }
 
 // General props for pages received from routing
@@ -112,7 +118,7 @@ export interface PageProps {
 // Props for the main content body that might include multiple sections
 export interface BodyContentProps {
   sections: SectionProps[];
-  current: React.RefObject<HTMLDivElement>;
+  // current: React.RefObject<HTMLDivElement>;
 }
 
 export interface CommonPageProps {
@@ -133,27 +139,30 @@ export interface CommonProps {
 export interface ImageInfo {
   src: string;
   title: string;
-  objectFit?: ObjectFit;
-  objectPosition?: ObjectPosition;
-
+  description: string;
+  objectFit?: "cover" | "contain" | "fill" | "none" | "scale-down";
+  objectPosition?: string;
   cols?: number;
   rows?: number;
-  width?: Width<string | number>;
-  height?: Height<string | number>;
-  scale?: string;
+  width?: string;
+  height?: string;
   backgroundColor?: string;
 }
 
 export interface ProjectDetails {
   name: string;
   images: ImageInfo[];
+  title: string;
   description: string;
   techno: string[];
   url: string;
   date: string;
-  type:string[];
+  type: string[];
+  body:string;
+  palette:string[];
+  fonts:string[]
 }
 
-export interface PhotoGalleryProps {
-  slides: ProjectDetails[];
+export interface ProjectGalleryProps {
+  projects: ProjectDetails[];
 }

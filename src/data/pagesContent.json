@@ -40,11 +40,11 @@
       "justifyContent": "center",
       "alignItems": "center",
       "contenu": [
-        "Originally from Reunion Island, my journey in the past decade has taken me across Asia and Australia, where I developed footwear, merging aesthetics with practicality. The turn of events during the pandemic brought me back to France, prompting a significant career shift towards technology.",
-        "Today, I specialize as a front-end developer, crafting visually appealing and responsive applications. My toolbox includes React, TypeScript, and Sass, with a particular fondness for MUI (Material-UI) for its beauty and functionality. While I dabble in backend technologies like Node.js, Express, and PostgreSQL, my true passion resides in the front-end realm.",
-        "I pride myself on being detail-oriented, a trait that occasionally leads me down the rabbit hole of perfectionism. Yet, it's this very attention to detail that motivates me to strive for excellence in every project I undertake. With a diverse background that spans continents and industries, I bring versatility, creativity, and a meticulous eye to every project.",
-        "If you're seeking a developer who is passionate about creating beautiful, user-friendly digital experiences, let's connect!"
-      ]
+        "Hi, I'm Channy, originally from Reunion Island. Over the past decade, my adventures have taken me across Asia and Australia, where I honed my skills in footwear design, blending aesthetics with practicality. The pandemic brought me back to France and opened up a new chapter in technology.",
+        "Now, I'm a Paris-based front-end developer and designer, passionate about creating visually appealing and responsive applications. My toolkit includes React, TypeScript, and Sass, with a particular fondness for clean design and functionality. While I occasionally dive into backend technologies like Node.js, Express, and PostgreSQL, my heart truly belongs to the front-end.",
+        "Fluent in both English and French, I collaborate effortlessly in diverse environments. With a background that spans different continents and industries, I offer a fresh perspective and a versatile approach, bringing a balanced blend of creativity and precision to every project.",
+        "When I'm not coding, you'll find me running with dogs or any other living being, staying active, or enjoying the outdoors. I'm always eager to learn and grow, ready to tackle new challenges and create user-friendly digital experiences. If you're looking for a developer who is dedicated and passionate about their craft, let's connect!"
+    ]
     },
     {
       "title": "Projects",
@@ -58,7 +58,7 @@
       "footerColor": "",
       "display": "flex",
       "flexDirection": "row",
-      "margin": "100px auto",
+      "margin": "40px auto",
       "height": "auto",
       "justifyContent": "center",
       "alignItems": "center"

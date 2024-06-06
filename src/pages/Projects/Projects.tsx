@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import PhotoGallery from "../../components/PhotoGallery/PhotoGallery";
+import ProjectGallery from "../../components/PhotoGallery/PhotoGallery";
 import { projects } from "../../data/ProjectContent";
 import useCurrentSectionData from "../../hooks/useCurrentSectionData";
 import { CommonPageProps } from "../../types";
@@ -9,8 +9,8 @@ const Projects = ({section}:CommonPageProps) => {
   const sectionData = useCurrentSectionData(section.id);
 
   const containerStyle: CSSProperties = {
-    // width: "auto", // full width of the viewport
-    maxWidth:'1000px',
+    width: "100%", // full width of the viewport
+    maxWidth:'1200px',
     display: "flex",
     flexDirection:'column',
     justifyContent: "space-around",
@@ -33,7 +33,7 @@ const Projects = ({section}:CommonPageProps) => {
         >
           Projects
         </h1>
-      <PhotoGallery slides={projects} />
+      <ProjectGallery projects={projects} />
     </div>
   );
 };
