@@ -7,6 +7,7 @@ import Header from "./Header";
 import PinSpacer from "./PinSpacer";
 import SectionComponent from "./SectionComponent";
 import { BodyContentProps } from "../types";
+import LanguageSwitcher from "./LanguageToggle"; // Ensure correct import path
 
 function Body({ sections }: BodyContentProps) {
   const { currentSection, updateSection } = useCurrentSection();
@@ -21,7 +22,7 @@ function Body({ sections }: BodyContentProps) {
         flexDirection: "column",
         justifyContent: "center",
         overflow: "hidden",
-        alignItems: isMobile ? "center" : "",
+        alignItems: isMobile ? "center" : "flex-start", // Adjust alignment for non-mobile
       }}
     >
       <PinSpacer
@@ -29,16 +30,16 @@ function Body({ sections }: BodyContentProps) {
         style={{
           justifyContent: isMobile ? "center" : "flex-start",
           position: "fixed",
-          width: isMobile ? "80%" : "auto",
+          width: "auto",
           top: "20px",
-          left: isMobile ? "" : "20px",
+          left: isMobile ? "0" : "20px",
           textAlign: isMobile ? "center" : "left",
         }}
         currentSection={currentSection}
       >
         <Footer className={getClassName("footer", currentSection)} />
       </PinSpacer>
-
+      <LanguageSwitcher />
       {sections.map((section) => (
         <SectionComponent
           key={section.id}
@@ -57,7 +58,7 @@ function Body({ sections }: BodyContentProps) {
           position: "fixed",
           width: isMobile ? "80%" : "auto",
           bottom: "20px",
-          right: isMobile ? "" : "20px",
+          right: isMobile ? "0" : "20px",
           textAlign: isMobile ? "center" : "right",
         }}
         currentSection={currentSection}

@@ -123,8 +123,8 @@ export interface BodyContentProps {
 
 export interface CommonPageProps {
   section: PageProps;
-  currentSection: string;
-  sectionId: string;
+  currentSection?: string;
+  sectionId?: string;
 }
 
 export interface SectionContextState {
@@ -136,33 +136,51 @@ export interface CommonProps {
   className: string;
 }
 
-export interface ImageInfo {
+// src/types.ts
+
+export interface ImageData {
   src: string;
   title: string;
   description: string;
-  objectFit?: "cover" | "contain" | "fill" | "none" | "scale-down";
-  objectPosition?: string;
-  cols?: number;
-  rows?: number;
-  width?: string;
-  height?: string;
-  backgroundColor?: string;
+  cols: number;
+  rows: number;
+  objectFit: "cover"|"contain";
+  objectPosition: string;
+  backgroundColor: string;
+  width: string;
+  height: string;
 }
 
-export interface ProjectDetails {
+export interface Project {
+  title: string;
+  items: ProjectData[];
+  visit: string;
+  published: string;
+}
+export interface ProjectData {
   name: string;
-  images: ImageInfo[];
   title: string;
   description: string;
   techno: string[];
   url: string;
   date: string;
   type: string[];
-  body:string;
-  palette:string[];
-  fonts:string[]
+  images: ImageData[];
+  body: string;
+ palette: string[];
+  fonts: string[];
 }
 
 export interface ProjectGalleryProps {
+  projects: ProjectData[];
+  section?: PageProps;
+}
+
+export interface ImageModalProps {
+  open: boolean;
+  handleClose: () => void;
+  itemData: ProjectDetails;
+  currentProject: number;
+  setCurrentProject: (index: number) => void;
   projects: ProjectDetails[];
 }

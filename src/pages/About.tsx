@@ -1,25 +1,24 @@
 import React, { useState, CSSProperties } from "react";
 import { CommonPageProps } from "../types";
-import useCurrentSectionData from "../hooks/useCurrentSectionData";
 import { useMediaQuery } from "@mui/material";
 import ContrastSharpIcon from "@mui/icons-material/ContrastSharp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faReact, faNodeJs, faSass } from "@fortawesome/free-brands-svg-icons"; // Add other icons as needed
+import { faReact, faNodeJs, faSass } from "@fortawesome/free-brands-svg-icons";
 import { faDatabase } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 const About = ({ section }: CommonPageProps) => {
   const isMobile = useMediaQuery("(max-width:425px)");
-  const sectionData = useCurrentSectionData(section.id);
   const [gridOn, setGridOn] = useState(false);
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
+  const { t } = useTranslation();
 
   const skills = [
     { name: "React", color: "#D93100", icon: faReact },
-    // { name: "TypeScript", color: "#DD6144", icon: faReact }, // Replace with appropriate icon
     { name: "Sass", color: "#C082B9", icon: faSass },
     { name: "Node.js", color: "rgb(214 243 55)", icon: faNodeJs },
     { name: "PostGreSQL", color: "#C082B9", icon: faDatabase },
-    { name: "Express", color: "#DD6144", icon: faNodeJs }, // Replace with appropriate icon
+    { name: "Express", color: "#DD6144", icon: faNodeJs }
   ];
 
   const handleGridToggle = () => {
@@ -37,6 +36,9 @@ const About = ({ section }: CommonPageProps) => {
     marginBottom: "0.5rem",
     transition: "transform 0.3s ease, box-shadow 0.3s ease",
   };
+
+  const contentArray = t(`${section.id}.content`, { returnObjects: true }) as string[];
+  const paragraphs = Array.isArray(contentArray) ? contentArray : [];
 
   const paraStyle: CSSProperties = {
     border: gridOn ? "1px solid" : "1px solid transparent",
@@ -58,7 +60,6 @@ const About = ({ section }: CommonPageProps) => {
     gap: gridOn ? "20px" : "0",
     minHeight: "350px",
     padding: isMobile ? "0" : "1em 0",
-    // margin: "40px auto",
     justifyContent: "center",
     width: "100%",
     alignItems: "start",
@@ -107,7 +108,7 @@ const About = ({ section }: CommonPageProps) => {
             fontFamily: gridOn ? "Urbanist" : "",
           }}
         >
-          {section.id}
+          {t(`${section.id}.title`)}
         </h1>
         <button onClick={handleGridToggle} style={buttonStyle}>
           <h5 style={buttonText}>
@@ -116,7 +117,7 @@ const About = ({ section }: CommonPageProps) => {
         </button>
       </div>
       <div style={gridContainerStyle}>
-        {sectionData?.contenu?.map((text, index, arr) => {
+        {paragraphs.map((text, index, arr) => {
           if (index === Math.floor(arr.length / 2)) {
             return (
               <React.Fragment key={index}>
@@ -129,7 +130,6 @@ const About = ({ section }: CommonPageProps) => {
                       alignItems: "flex-start",
                       justifyContent: "space-between",
                       marginBottom: "20px",
-                      // width: "80%",
                     }}
                   >
                     {skills.map((skill) => (

@@ -6,10 +6,11 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     rollupOptions: {
-      // Add any necessary rollup configuration here
     }
   },
+  publicDir: 'public', // Ensuring Vite uses the public directory
   server: {
     open: true,
+    port: 3001,
   }
 });

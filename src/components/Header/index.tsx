@@ -2,6 +2,7 @@ import { HashLink } from "react-router-hash-link";
 import "./styles.scss";
 import { PageProps } from "../../types";
 import { useMediaQuery } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 interface HeaderProps {
   sections: PageProps[];
@@ -16,6 +17,8 @@ export default function Header({
   currentSection,
 }: HeaderProps) {
   const isMobile = useMediaQuery("(max-width:425px)");
+const { t } = useTranslation();
+
 
   const renderSections = () => {
     if (isMobile) {
@@ -28,7 +31,7 @@ export default function Header({
             currentSection === section.id ? "active" : ""
           }`}
         >
-          <h6 style={{ fontWeight: "600" }}>{section.title}</h6>
+          <h6 style={{ fontWeight: "600" }}>{t(`${section.id}.title`)}</h6>
         </HashLink>
       ));
     } else {
@@ -41,7 +44,7 @@ export default function Header({
             currentSection === section.id ? "active" : ""
           }`}
         >
-          <h6 style={{ fontWeight: "600" }}>{section.title}</h6>
+          <h6 style={{ fontWeight: "600" }}>{t(`${section.id}.title`)}</h6>
         </HashLink>
       ));
     }

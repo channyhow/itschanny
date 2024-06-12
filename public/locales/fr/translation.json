@@ -1,33 +1,90 @@
 {
-    "sections": [
-      {
-        "title": "Salut, je suis Channy",
-        "id": "home",
-        "contenu": [
-          "Votre développeur front-end local",
-          "poussé par la conviction que le design peut inspirer la diversité et l'innovation",
-          "alors que je continue à apprendre et à grandir.",
-          "Connectons-nous et transformons les idées en réalité."
-        ]
-      },
-      {
-        "title": "À propos",
-        "id": "about",
-        "contenu": [
-          "Salut, je suis Channy, originaire de l'île de la Réunion. Au cours de la dernière décennie, mes aventures m'ont mené à travers l'Asie et l'Australie, où j'ai perfectionné mes compétences en conception de chaussures, alliant esthétique et praticité. La pandémie m'a ramené en France et a ouvert un nouveau chapitre dans la technologie.",
-          "Maintenant, je suis développeur et designer front-end basé à Paris, passionné par la création d'applications visuellement attrayantes et réactives. Mon ensemble d'outils comprend React, TypeScript et Sass, avec une affection particulière pour le design propre et fonctionnel. Bien que je plonge occasionnellement dans les technologies back-end comme Node.js, Express et PostgreSQL, mon cœur appartient vraiment au front-end.",
-          "Fluent en anglais et en français, je collabore sans effort dans des environnements diversifiés. Avec un parcours qui s'étend sur différents continents et industries, j'offre une perspective fraîche et une approche polyvalente, apportant un mélange équilibré de créativité et de précision à chaque projet.",
-          "Quand je ne code pas, vous me trouverez en train de courir avec des chiens ou tout autre être vivant, de rester actif ou de profiter du plein air. Je suis toujours désireux d'apprendre et de grandir, prêt à relever de nouveaux défis et à créer des expériences numériques conviviales. Si vous cherchez un développeur dédié et passionné par son métier, connectons-nous !"
-        ]
-      },
-      {
-        "title": "Projets",
-        "id": "projects"
-      },
-      {
-        "title": "Contact",
-        "id": "contact"
-      }
+  "home": {
+    "title": "hey, c'est Channy",
+    "content": "Développeuse front-end basée à Paris, convaincue que le design peut créer la diversité et l'innovation, tout en continuant à apprendre et évoluer.",
+    "call_to_action": "Connectons et transformons les idées en réalité."
+  },
+  "about": {
+    "title": "À propos",
+    "content": [
+      "Bonjour, je suis Channy, originaire de l'île de la Réunion. Au cours de la dernière décennie, mes aventures m'ont mené à travers l'Asie et l'Australie, où j'ai perfectionné mes compétences en conception de chaussures, alliant esthétique et praticité. La pandémie m'a ramené en France et a ouvert un nouveau chapitre dans la technologie.",
+      "Maintenant, je suis développeur et designer front-end basé à Paris, passionné par la création d'applications visuellement attrayantes et réactives. Mon ensemble d'outils comprend React, TypeScript et Sass, avec une affection particulière pour le design propre et fonctionnel. Bien que je plonge occasionnellement dans les technologies back-end comme Node.js, Express et PostgreSQL, mon cœur appartient vraiment au front-end.",
+      "Fluent en anglais et en français, je collabore sans effort dans des environnements diversifiés. Avec un parcours qui s'étend sur différents continents et industries, j'offre une perspective fraîche et une approche polyvalente, apportant un mélange équilibré de créativité et de précision à chaque projet.",
+      "Quand je ne code pas, vous me trouverez en train de courir avec des chiens ou tout autre être vivant, de rester actif ou de profiter du plein air. Je suis toujours désireux d'apprendre et de grandir, prêt à relever de nouveaux défis et à créer des expériences numériques conviviales. Si vous cherchez un développeur dédié et passionné par son métier, connectons-nous !"
     ]
+  },
+
+  "projects": {
+    "title": "Projets",
+    "items": [
+        {
+        "name": "JL Albany",
+        "title": "Portfolio de Jean-Ludovic Albany",
+        "description": "Jean-Ludovic Albany est un expert en suivi publicitaire basé à Paris. Son portfolio met en valeur son expertise de manière simple et graphique. Le design est simple mais efficace, avec des couleurs blanc cassé, noir, gris et jaune ensoleillé. Le site web réactif est conçu pour être visuellement attrayant sur tous les appareils. Le logo a été repensé pour s'adapter à l'état d'esprit et à la marque de JL.",
+        "techno": ["SASS", "Vite", "React", "TypeScript"],
+        "url": "https://jlalbany.netlify.app/",
+        "date": "Janvier 2024",
+        "type": ["Portfolio", "Publicité", "Minimaliste", "Service"],
+        "images": [
+          {
+            "src": "assets/jlalbany/jlu2024desk.png",
+            "title": "Vue Desktop Réactive",
+            "description": ""
+          },
+          {
+            "src": "assets/jlalbany/NEW_JLALBANY 2 Y GREY.png",
+            "title": "Le logo de la marque a été repensé et modernisé",
+            "description": ""
+          },
+          {
+            "src": "assets/jlalbany/jlu2024mob.png",
+            "title": "Vue Mobile Réactive",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "Sasha Yoga Flow",
+        "title": "Site Web de Yoga Réactif avec Réservation en Ligne",
+        "description": "Sasha Yoga Flow est un site web serein et accueillant dédié à la pratique et à l'enseignement du yoga. Avec des tons terreux neutres et une ambiance fluide et naturelle, le site web reflète l'essence du yoga. Il propose des mises en page simples et faciles à naviguer, combinant des éléments de design calmes et sereins avec une fonctionnalité intuitive. L'utilisation de textures organiques et de palettes de couleurs douces évoque un sentiment de tranquillité et d'équilibre, en faisant l'espace parfait pour guider les utilisateurs dans leur parcours de yoga. Le site web, destiné à un public parisien, offre des informations sur les horaires des cours, les emplacements et permet la réservation en ligne des ateliers.",
+        "techno": ["SASS", "Vite", "React", "TypeScript"],
+        "url": "https://sashayogaflow.netlify.app/",
+        "date": "Février 2024",
+        "type": ["Bien-être", "Fitness", "Réservation en Ligne"],
+        "images": [
+          {
+            "src": "assets/sashayogaflow/sashayogaflow desktop.png",
+            "title": "Vue Desktop Réactive",
+            "description": ""
+          },
+          {
+            "src": "assets/sashayogaflow/SASHA LOGO HIRES_square terracotta bg white logo.png",
+            "title": "Le logo a également été repensé",
+            "description": ""
+          },
+          {
+            "src": "assets/sashayogaflow/sashayogaflow mobile.png",
+            "title": "Vue Mobile Réactive",
+            "description": ""
+          }
+        ]
+      }
+    ],
+
+    "visit": "visiter",
+    "published": "publié en"
+  },
+  "contact": {
+    "title": "Contact",
+    "successMessage": "Votre message a été envoyé avec succès!",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Entrez votre email",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Entrez votre nom",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Entrez votre message",
+    "submitButton": "Envoyer",
+    "errorTitle": "Oups",
+    "errorMessage": "Il y a un petit soucis avec l'adresse e-mail, pourriez-vous re-vérifier?"
   }
-  
+}

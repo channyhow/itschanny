@@ -1,3 +1,4 @@
+// src/pages/Home.js
 import { useState } from "react";
 import Container from "../components/Container";
 import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAlt";
@@ -5,11 +6,13 @@ import { HashLink } from "react-router-hash-link";
 import { SectionComponentProps } from "../types";
 import useCurrentSectionData from "../hooks/useCurrentSectionData";
 import { useMediaQuery } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 const Home = ({ section }: SectionComponentProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const sectionData = useCurrentSectionData(section.id);
   const isMobile = useMediaQuery("(max-width:425px)");
+  const { t } = useTranslation();
 
   const skills = [
     "React",
@@ -18,34 +21,31 @@ const Home = ({ section }: SectionComponentProps) => {
     "Node.js",
     "PostGreSQL",
     "Express",
-    // "Illustrator",
   ];
 
+  // Assert the type of the result from t
+  // const contentArray = t('home.contenu', { returnObjects: true }) as string[];
   return (
-    <div style={{
-      display:'flex',
-      flexDirection:'column',
-      alignItems:'center'
-    }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       {/* main green container */}
       <Container
+        className=""
         display="flex"
         flexDirection="column"
         margin="1rem"
-        // minWidth="300px"
         maxWidth="500px"
-        // width="80%" // Responsive width
         backgroundColor={sectionData?.containerColor}
-        className={""}
         padding="1em"
         border="1px solid"
       >
-        <h5 style={{ paddingBottom: "1rem" }}>
-          Your local front end developer,
-          <br />
-          driven by the belief that design can inspire diversity and innovation
-          as I continue to learn and grow.
-        </h5>
+    
+        <h5 style={{ paddingBottom: "1rem" }}>{t("home.content")}</h5>
         <HashLink smooth to="#about">
           <h1
             style={{
@@ -54,54 +54,46 @@ const Home = ({ section }: SectionComponentProps) => {
               letterSpacing: "-2px",
             }}
           >
-            {section.title}
+            {" "}
+            {t("home.title")}
+     
           </h1>
         </HashLink>
-        <div
-
->  
-<h5
-          style={{
-            textAlign: "left",
-            backgroundColor: isHovered ? "#ceca4d" : undefined,
-            transition: "background-color 0.5s ease",
-            // display: "flex", // Use flex to align text and icon
-            // alignItems: "center", // Align items vertically
-            // flexDirection:"column",
-            // width: "auto",
-          }}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-            Let’s {' '}
-            <HashLink smooth to="#contact" style={{ marginRight: "5px" }}>
-              connect and transform ideas
-            </HashLink>
-            into digital reality.
-          <span
+        <div>
+          <h5
             style={{
-              display: "inline-flex", // Keeps the icon inline with the text
-              width: "24px", // Width of the icon (adjust as needed)
-              height: "24px", // Height of the icon (adjust as needed)
-              justifyContent: "center", // Center the icon horizontally
-              opacity: isHovered ? 1 : 0, // Control visibility with opacity
-              transition: "opacity 0.3s ease", // Smooth transition for opacity
+              textAlign: "left",
+              backgroundColor: isHovered ? "#ceca4d" : undefined,
+              transition: "background-color 0.5s ease",
             }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
-            <SentimentSatisfiedAltIcon />
-          </span>
-        </h5></div>
-      
+            <HashLink smooth to="#contact" style={{ marginRight: "5px" }}>
+              {t("home.call_to_action")}
+            </HashLink>
+            <span
+              style={{
+                display: "inline-flex",
+                width: "24px",
+                height: "24px",
+                justifyContent: "center",
+                opacity: isHovered ? 1 : 0,
+                transition: "opacity 0.3s ease",
+              }}
+            >
+              <SentimentSatisfiedAltIcon />
+            </span>
+          </h5>
+        </div>
       </Container>
       <div
         style={{
           display: "flex",
           flexWrap: "wrap",
           marginTop: "10px",
-          width:'100%',
+          width: "100%",
           justifyContent: "space-evenly",
-          // width: "80%", // Match container width
-          // margin: "10px auto 0", // Center the div
         }}
       >
         {skills.map((skill) => (
@@ -110,7 +102,6 @@ const Home = ({ section }: SectionComponentProps) => {
             style={{
               margin: isMobile ? "0 0.1rem" : "0 0.5rem",
               fontSize: isMobile ? "50%" : "60%",
-              // flex: "1 1 100px", // Flex properties to expand and shrink
               textAlign: "center",
             }}
           >

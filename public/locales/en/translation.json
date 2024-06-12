@@ -1,33 +1,88 @@
 {
-    "sections": [
-      {
-        "title": "Hi I'm Channy",
-        "id": "home",
-        "contenu": [
-          "Your local front end developer",
-          "driven by the belief that design can inspire diversity and innovation",
-          "as I continue to learn and grow.",
-          "Let's connect and transform ideas into reality."
-        ]
-      },
-      {
-        "title": "About",
-        "id": "about",
-        "contenu": [
-          "Hi, I'm Channy, originally from Reunion Island. Over the past decade, my adventures have taken me across Asia and Australia, where I honed my skills in footwear design, blending aesthetics with practicality. The pandemic brought me back to France and opened up a new chapter in technology.",
-          "Now, I'm a Paris-based front-end developer and designer, passionate about creating visually appealing and responsive applications. My toolkit includes React, TypeScript, and Sass, with a particular fondness for clean design and functionality. While I occasionally dive into backend technologies like Node.js, Express, and PostgreSQL, my heart truly belongs to the front-end.",
-          "Fluent in both English and French, I collaborate effortlessly in diverse environments. With a background that spans different continents and industries, I offer a fresh perspective and a versatile approach, bringing a balanced blend of creativity and precision to every project.",
-          "When I'm not coding, you'll find me running with dogs or any other living being, staying active, or enjoying the outdoors. I'm always eager to learn and grow, ready to tackle new challenges and create user-friendly digital experiences. If you're looking for a developer who is dedicated and passionate about their craft, let's connect!"
-        ]
-      },
-      {
-        "title": "Projects",
-        "id": "projects"
-      },
-      {
-        "title": "Contact",
-        "id": "contact"
-      }
+  "home": {
+    "title": "Hi I'm Channy",
+    "content": "Your local front end developer, driven by the belief that design can inspire diversity and innovation, as I continue to learn and grow. Let's connect and transform ideas into reality.",
+    "call_to_action": "Let's connect and transform ideas into digital reality"
+  },
+  "about": {
+    "title": "About",
+    "content": [
+      "Hi, I'm Channy, originally from Reunion Island. Over the past decade, my adventures have taken me across Asia and Australia, where I honed my skills in footwear design, blending aesthetics with practicality. The pandemic brought me back to France and opened up a new chapter in technology.",
+      "Now, I'm a Paris-based front-end developer and designer, passionate about creating visually appealing and responsive applications. My toolkit includes React, TypeScript, and Sass, with a particular fondness for clean design and functionality. While I occasionally dive into backend technologies like Node.js, Express, and PostgreSQL, my heart truly belongs to the front-end.",
+      "Fluent in both English and French, I collaborate effortlessly in diverse environments. With a background that spans different continents and industries, I offer a fresh perspective and a versatile approach, bringing a balanced blend of creativity and precision to every project.",
+      "When I'm not coding, you'll find me running with dogs or any other living being, staying active, or enjoying the outdoors. I'm always eager to learn and grow, ready to tackle new challenges and create user-friendly digital experiences. If you're looking for a developer who is dedicated and passionate about their craft, let's connect!"
     ]
+  },
+  "projects": {
+    "title": "Projects",
+    "items": [
+     {
+        "name": "JL Albany",
+        "title": "Jean-Ludovic Albany Portfolio",
+        "description": "Jean-Ludovic Albany is a Paris-based advertising tracking expert. His portfolio showcases his expertise in a straightforward and graphic manner. The design is simple yet effective, featuring off-white, black, grey, and sunny yellow colors. The responsive website is designed to be visually appealing across all devices. The logo has been redesigned to fit JL's mindset and branding.",
+        "techno": ["SASS", "Vite", "React", "TypeScript"],
+        "url": "https://jlalbany.netlify.app/",
+        "date": "January 2024",
+        "type": ["Portfolio", "Advertising", "Minimalist", "Service"],
+        "images": [
+          {
+            "src": "assets/jlalbany/jlu2024desk.png",
+            "title": "Responsive Desktop View",
+            "description": ""
+          },
+          {
+            "src": "assets/jlalbany/NEW_JLALBANY 2 Y GREY.png",
+            "title": "Brand logo has been redesigned and modernised",
+            "description": ""
+          },
+          {
+            "src": "assets/jlalbany/jlu2024mob.png",
+            "title": "Responsive Website Mobile View",
+            "description": ""
+          }
+        ]
+      },
+      {
+        "name": "Sasha Yoga Flow",
+        "title": "Responsive Yoga Website with Online Booking",
+        "description": "Sasha Yoga Flow is a serene and inviting website dedicated to the practice and teaching of yoga. With neutral earthy tones and a flowy, natural vibe, the website mirrors the essence of yoga. It features simple and easy-to-navigate layouts, combining calm and serene design elements with intuitive functionality. The use of organic textures and gentle color palettes evokes a sense of tranquility and balance, making it the perfect space for guiding users through their yoga journey. The website, catering to a Paris-based audience, offers information on class times, locations, and allows for online booking of workshops.",
+        "techno": ["SASS", "Vite", "React", "TypeScript"],
+        "url": "https://sashayogaflow.netlify.app/",
+        "date": "February 2024",
+        "type": ["Wellness", "Fitness", "Online Booking"],
+        "images": [
+          {
+            "src": "assets/sashayogaflow/sashayogaflow desktop.png",
+            "title": "Responsive Desktop View",
+            "description": ""
+          },
+          {
+            "src": "assets/sashayogaflow/SASHA LOGO HIRES_square terracotta bg white logo.png",
+            "title": "The logo has been redesigned as well",
+            "description": ""
+          },
+          {
+            "src": "assets/sashayogaflow/sashayogaflow mobile.png",
+            "title": "Responsive Website Mobile View",
+            "description": ""
+          }
+        ]
+      }
+    ],
+    "visit": "Visit",
+    "published": "Published in"
+  },
+  "contact": {
+    "title": "Contact",
+    "successMessage": "Your message has been sent successfully!",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email",
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter your name",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Enter your message",
+    "submitButton": "Submit",
+    "errorTitle": "Oopsie Daisy",
+    "errorMessage": "There’s something about the email address entered, could you have a quick look?"
   }
-  
+}

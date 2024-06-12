@@ -1,0 +1,35 @@
+<svg id="b91d2ee3-b78c-4b15-90be-7e83369a8270" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 242 239">
+  <defs>
+    <style>
+      .e1e2b765-f23d-46b9-84ae-ab60802eac5d {
+        fill: none;
+      }
+
+      .e4bc2de4-1ec1-4d84-8a9b-e4e01e223b3a {
+        clip-path: url(#a1e94ed7-aa8f-46cb-b2ef-7003cef76e34);
+      }
+
+      .ab4bace5-5842-4f5d-a642-11dcf3e8a159 {
+        fill: #FAF9F6
+;
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .fff11a32-2461-4a2d-a83d-43dbcf14c04b {
+        fill: #e8c328;
+      }
+    </style>
+    <clipPath id="a1e94ed7-aa8f-46cb-b2ef-7003cef76e34">
+      <circle class="e1e2b765-f23d-46b9-84ae-ab60802eac5d" cx="121" cy="119.5" r="119"/>
+    </clipPath>
+  </defs>
+  <g class="e4bc2de4-1ec1-4d84-8a9b-e4e01e223b3a">
+    <rect class="ab4bace5-5842-4f5d-a642-11dcf3e8a159" x="-27.5" y="-28.5" width="298" height="298"/>
+    <g>
+      <path d="M88,157.8c-4.8,0-8.4-1.4-10.6-4.4S74,145.9,74,140V130h8.8v9.4c0,2,.1,3.7.2,5.4a8.6,8.6,0,0,0,1.3,3.9,4,4,0,0,0,3.5,1.5,3.8,3.8,0,0,0,3.4-1.5,8.2,8.2,0,0,0,1.3-4c.1-1.7.2-3.7.2-6V81.2h9v57.2c0,6.4-1.1,11.3-3.4,14.5S92.6,157.8,88,157.8Z"/>
+      <polygon points="168 81.2 168 157.8 106.6 157.8 106.6 81.2 115.6 81.2 115.6 150.4 159 150.4 159 81.2 168 81.2"/>
+      <path class="fff11a32-2461-4a2d-a83d-43dbcf14c04b" d="M120.2,146.8l11.6-65.6h10.8l12.7,65.6h-8.5l-2.1-14.7H130.8l-2.1,14.7Zm11.6-22h11.7l-6-32.6h-.2Z"/>
+    </g>
+  </g>
+</svg>

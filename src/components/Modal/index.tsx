@@ -1,34 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import { ProjectDetails } from "../../types";
+import { ImageModalProps } from "../../types";
 import { useMediaQuery } from "@mui/material";
 import { SliderNav } from "../PrevNextButtons";
-import { projects } from "../../data/ProjectContent";
+import { projectContent } from "../../data/ProjectContent";
+import { useTranslation } from "react-i18next";
 
-interface ImageModalProps {
-  open: boolean;
-  handleClose: () => void;
-  hoveredButton: boolean;
-  handleButtonMouseEnter: () => void;
-  handleButtonMouseLeave: () => void;
-  itemData: ProjectDetails;
-  currentProject: number;
-  setCurrentProject: (index: number) => void;
-  projects: ProjectDetails[];
-}
+
 
 const ImageModal: React.FC<ImageModalProps> = ({
   open,
   handleClose,
-  hoveredButton,
-  handleButtonMouseEnter,
-  handleButtonMouseLeave,
   itemData,
   currentProject,
   setCurrentProject,
 }) => {
   const isMobile = useMediaQuery("(max-width:768px)");
+  const { t } = useTranslation();
+  const [hoveredButton, setHoveredButton] = useState(false);
+
+  const handleButtonMouseEnter = () => {
+    setHoveredButton(true);
+  };
+
+  const handleButtonMouseLeave = () => {
+    setHoveredButton(false);
+  };
 
   const getBackground = (palette: string[]) => {
     return `radial-gradient(circle at 80% 120%, ${palette[1]} 0%, ${palette[2]} 20%, ${palette[2]} 40%, ${palette[0]} 80%),
@@ -156,7 +154,7 @@ const ImageModal: React.FC<ImageModalProps> = ({
           <h6>{itemData.name}</h6>
 
           <SliderNav
-            projects={projects}
+            projects={projectContent}
             currentProject={currentProject}
             setCurrentProject={setCurrentProject}
           />
@@ -165,25 +163,25 @@ const ImageModal: React.FC<ImageModalProps> = ({
         <figure style={desktopStyle}>
           <img
             src={itemData.images[0].src}
-            alt={itemData.images[0].title}
+            alt={t(itemData.images[0].title)}
             style={imageStyle}
           />
           <figcaption style={figcaptionStyle}>
             <h6>
-              {itemData.images[0].title} - {itemData.images[0].description}
+              {t(itemData.images[0].title)} - {t(itemData.images[0].description)}
             </h6>
             <h6>1/{itemData.images.length}</h6>
           </figcaption>
         </figure>
         <header style={headerStyle}>
-          <h5>Published in {itemData.date}</h5>
+          <h5>{t('projects.published')} {t(itemData.date)}</h5>
           <h1
             style={{
               fontSize: isMobile ? "4rem" : "4.8rem",
               whiteSpace: "nowrap",
             }}
           >
-            {itemData.name}
+            {t(itemData.name)}
           </h1>
           <a
             href={itemData.url}
@@ -205,15 +203,15 @@ const ImageModal: React.FC<ImageModalProps> = ({
                 boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.1)",
               }}
             >
-              <h5>Visit</h5>
+              <h5>{t('projects.visit')}</h5>
             </div>
           </a>
         </header>
         <div style={infoSectionStyle} className="info-section">
           <div style={{ marginBottom: "10px", order: isMobile ? "3" : "" }}>
-            <h5 style={{ marginBottom: "5px", fontWeight: "500" }}>Techno</h5>
+            <h5 style={{ marginBottom: "5px", fontWeight: "500" }}>{t('projects.techno')}</h5>
             <ul>
-              {itemData.techno.map((techno, index) => (
+              {itemData.techno.map((techno:string, index:number) => (
                 <li key={index}>
                   <h4>{techno}</h4>
                 </li>
@@ -222,16 +220,16 @@ const ImageModal: React.FC<ImageModalProps> = ({
           </div>
           <div style={{ marginBottom: "10px", order: isMobile ? "1" : "" }}>
             <h5 style={{ marginBottom: "5px", fontWeight: "500" }}>
-              {itemData.title}
+              {t(itemData.title)}
             </h5>
             <p style={{ marginBottom: "5px", color: "#666153" }}>
-              {itemData.description}
+              {t(itemData.description)}
             </p>
           </div>
           <div style={{ marginBottom: "10px", order: isMobile ? "2" : "" }}>
-            <h5 style={{ marginBottom: "5px", fontWeight: "500" }}>Style</h5>
+            <h5 style={{ marginBottom: "5px", fontWeight: "500" }}>{t('projects.style')}</h5>
             <ul>
-              {itemData.type.map((type, index) => (
+              {itemData.type.map((type:string, index:number) => (
                 <li key={index}>
                   <h4>{type}</h4>
                 </li>
@@ -243,12 +241,12 @@ const ImageModal: React.FC<ImageModalProps> = ({
           <figure style={logoStyle}>
             <img
               src={itemData.images[1].src}
-              alt={itemData.images[1].title}
+              alt={t(itemData.images[1].title)}
               style={imageStyle}
             />
             <figcaption style={figcaptionStyle}>
               <h6>
-                {itemData.images[1].title} - {itemData.images[1].description}
+                {t(itemData.images[1].title)} - {t(itemData.images[1].description)}
               </h6>
               <h6>2/{itemData.images.length}</h6>
             </figcaption>
@@ -256,12 +254,12 @@ const ImageModal: React.FC<ImageModalProps> = ({
           <figure style={mobileStyle}>
             <img
               src={itemData.images[2].src}
-              alt={itemData.images[2].title}
+              alt={t(itemData.images[2].title)}
               style={imageStyle}
             />
             <figcaption style={figcaptionStyle}>
               <h6>
-                {itemData.images[2].title} - {itemData.images[2].description}
+                {t(itemData.images[2].title)} - {t(itemData.images[2].description)}
               </h6>
               <h6>3/{itemData.images.length}</h6>
             </figcaption>
