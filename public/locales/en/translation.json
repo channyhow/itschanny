@@ -38,7 +38,9 @@
           {
             "src": "assets/jlalbany/jlu2024mob.png",
             "title": "Responsive Website Mobile View",
-            "description": ""
+            "description": "",
+            "style":"style",
+            "tech":"techno"
           }
         ]
       },

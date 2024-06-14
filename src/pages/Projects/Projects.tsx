@@ -3,7 +3,6 @@ import ProjectGallery from "../../components/ProjectGallery/ProjectGallery";
 import useCurrentSectionData from "../../hooks/useCurrentSectionData";
 import { CommonPageProps } from "../../types";
 import { useTranslation } from "react-i18next";
-import { projectContent } from "../../data/ProjectContent";
 
 const Projects = ({ section }: CommonPageProps) => {
   const sectionData = useCurrentSectionData(section.id);
@@ -33,7 +32,7 @@ const Projects = ({ section }: CommonPageProps) => {
       >
         {t(`${section.id}.title`)}
       </h1>
-      <ProjectGallery projects={projectContent} section={section}/>
+      <ProjectGallery section={section}/>
     </div>
   );
 };

@@ -4,15 +4,13 @@ import Modal from "@mui/material/Modal";
 import { ImageModalProps } from "../../types";
 import { useMediaQuery } from "@mui/material";
 import { SliderNav } from "../PrevNextButtons";
-import { projectContent } from "../../data/ProjectContent";
 import { useTranslation } from "react-i18next";
-
-
+// import { projectContent } from "../../data/ProjectContent";
 
 const ImageModal: React.FC<ImageModalProps> = ({
   open,
   handleClose,
-  itemData,
+  data,
   currentProject,
   setCurrentProject,
 }) => {
@@ -40,7 +38,9 @@ const ImageModal: React.FC<ImageModalProps> = ({
     maxWidth: "1400px",
     maxHeight: "95vh",
     overflowY: "auto" as const,
-    background: getBackground(itemData.palette),
+    background: data[currentProject].palette
+      ? getBackground(data[currentProject].palette)
+      : "white",
     padding: "5%",
     border: "2px solid rgb(214 243 55)",
     margin: "0 1rem",
@@ -130,6 +130,12 @@ const ImageModal: React.FC<ImageModalProps> = ({
     gap: "2rem",
   };
 
+  console.log(
+    "current project",
+    currentProject,
+    "description",
+    data[currentProject].description
+  );
   return (
     <Modal
       open={open}
@@ -151,40 +157,46 @@ const ImageModal: React.FC<ImageModalProps> = ({
             justifyContent: "space-between",
           }}
         >
-          <h6>{itemData.name}</h6>
+          <h6>{data[currentProject].name}</h6>
 
           <SliderNav
-            projects={projectContent}
             currentProject={currentProject}
             setCurrentProject={setCurrentProject}
+            projects={data}
           />
         </div>
-
+{/* photo 1 */}
         <figure style={desktopStyle}>
           <img
-            src={itemData.images[0].src}
-            alt={t(itemData.images[0].title)}
+            src={data[currentProject].images[0].src}
+            alt={t(`projects.items.${currentProject}.images[0].title`)}
             style={imageStyle}
           />
           <figcaption style={figcaptionStyle}>
             <h6>
-              {t(itemData.images[0].title)} - {t(itemData.images[0].description)}
+              {t(`projects.items.${currentProject}.images[0].title`)} -{" "}
+              {t(`projects.items.${currentProject}.images[0].description`)}
             </h6>
-            <h6>1/{itemData.images.length}</h6>
+            <h6>1/{data[currentProject].images.length}</h6>
           </figcaption>
         </figure>
+
+{/* header */}
         <header style={headerStyle}>
-          <h5>{t('projects.published')} {t(itemData.date)}</h5>
+          <h5>
+            {t("projects.published")}{" "}
+            {t(`projects.items.${currentProject}.date`)}
+          </h5>
           <h1
             style={{
               fontSize: isMobile ? "4rem" : "4.8rem",
               whiteSpace: "nowrap",
             }}
           >
-            {t(itemData.name)}
+            {data[currentProject].name}
           </h1>
           <a
-            href={itemData.url}
+            href={data[currentProject].url}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={handleButtonMouseEnter}
@@ -203,33 +215,43 @@ const ImageModal: React.FC<ImageModalProps> = ({
                 boxShadow: "2px 2px 5px rgba(0, 0, 0, 0.1)",
               }}
             >
-              <h5>{t('projects.visit')}</h5>
+              <h5>{t("projects.visit")}</h5>
             </div>
           </a>
         </header>
+{/* info grid */}
         <div style={infoSectionStyle} className="info-section">
           <div style={{ marginBottom: "10px", order: isMobile ? "3" : "" }}>
-            <h5 style={{ marginBottom: "5px", fontWeight: "500" }}>{t('projects.techno')}</h5>
+            <h5 style={{ marginBottom: "5px", fontWeight: "500" }}>
+              {t("projects.tech")}
+            </h5>
+            {/* techno */}
             <ul>
-              {itemData.techno.map((techno:string, index:number) => (
-                <li key={index}>
-                  <h4>{techno}</h4>
-                </li>
-              ))}
+              {data[currentProject].techno.map(
+                (techno: string, index: number) => (
+                  <li key={index}>
+                    <h4>{techno}</h4>
+                  </li>
+                )
+              )}
             </ul>
           </div>
+          {/* description */}
           <div style={{ marginBottom: "10px", order: isMobile ? "1" : "" }}>
             <h5 style={{ marginBottom: "5px", fontWeight: "500" }}>
-              {t(itemData.title)}
+              {t(`projects.items.${currentProject}.title`)}
             </h5>
             <p style={{ marginBottom: "5px", color: "#666153" }}>
-              {t(itemData.description)}
+              {t(`projects.items.${currentProject}.description`)}
             </p>
           </div>
+          {/* style */}
           <div style={{ marginBottom: "10px", order: isMobile ? "2" : "" }}>
-            <h5 style={{ marginBottom: "5px", fontWeight: "500" }}>{t('projects.style')}</h5>
+            <h5 style={{ marginBottom: "5px", fontWeight: "500" }}>
+              {t("projects.style")}
+            </h5>
             <ul>
-              {itemData.type.map((type:string, index:number) => (
+              {data[currentProject].type.map((type: string, index: number) => (
                 <li key={index}>
                   <h4>{type}</h4>
                 </li>
@@ -237,31 +259,36 @@ const ImageModal: React.FC<ImageModalProps> = ({
             </ul>
           </div>
         </div>
+
         <div style={gridStyle}>
+                  {/* photo 2 */}
           <figure style={logoStyle}>
             <img
-              src={itemData.images[1].src}
-              alt={t(itemData.images[1].title)}
+              src={data[currentProject].images[1].src}
+              alt={t(`projects.items.${currentProject}.images[1].title`)}
               style={imageStyle}
             />
             <figcaption style={figcaptionStyle}>
               <h6>
-                {t(itemData.images[1].title)} - {t(itemData.images[1].description)}
+                {t(`projects.items.${currentProject}.images[1].title`)} -{" "}
+                {t(`projects.items.${currentProject}.images[1].description`)}
               </h6>
-              <h6>2/{itemData.images.length}</h6>
+              <h6>2/{data[currentProject].images.length}</h6>
             </figcaption>
           </figure>
+          {/* photo 3 */}
           <figure style={mobileStyle}>
             <img
-              src={itemData.images[2].src}
-              alt={t(itemData.images[2].title)}
+              src={data[currentProject].images[2].src}
+              alt={t(`projects.items.${currentProject}.images[2].title`)}
               style={imageStyle}
             />
             <figcaption style={figcaptionStyle}>
               <h6>
-                {t(itemData.images[2].title)} - {t(itemData.images[2].description)}
+                {t(`projects.items.${currentProject}.images[2].title`)} -{" "}
+                {t(`projects.items.${currentProject}.images[2].description`)}
               </h6>
-              <h6>3/{itemData.images.length}</h6>
+              <h6>3/{data[currentProject].images.length}</h6>
             </figcaption>
           </figure>
         </div>

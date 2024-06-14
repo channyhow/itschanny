@@ -5,9 +5,9 @@ import { ProjectGalleryProps } from "../../types";
 import { NavLink } from "react-router-dom";
 import ImageModal from "../Modal";
 import "./styles.scss";
+import { projectContent } from "../../data/ProjectContent";
 
 export default function ProjectGallery({
-  projects,
   section,
 }: ProjectGalleryProps) {
   const [hoveredImage, setHoveredImage] = useState<number | null>(null);
@@ -51,7 +51,7 @@ export default function ProjectGallery({
     >
  
      
-      {projects.map((item, index) => (
+      {projectContent.map((item, index) => (
         <div key={index} style={{ position: 'relative' }}>
           <figure
             onMouseEnter={() => handleMouseEnter(index)}
@@ -129,12 +129,11 @@ export default function ProjectGallery({
       ))}
       {
         <ImageModal 
-        open={open} 
-        handleClose={handleClose}  
-        itemData={projects[currentItem]} 
-        currentProject={currentItem} 
-        setCurrentProject={setCurrentItem} 
-        projects={projects} 
+          open={open}
+          handleClose={handleClose}
+          data={projectContent}
+          currentProject={currentItem}
+          setCurrentProject={setCurrentItem} 
       />
       }
     </article>

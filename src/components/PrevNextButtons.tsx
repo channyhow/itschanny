@@ -1,11 +1,11 @@
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { ProjectDetails } from "./../types";
+import { ProjectData } from "./../types";
 import { useSwipeable } from "react-swipeable";
 import { useEffect } from "react";
 
 interface SliderNavProps {
-  projects: ProjectDetails[];
+  projects: ProjectData[];
   currentProject: number;
   setCurrentProject: (index: number) => void;
 }

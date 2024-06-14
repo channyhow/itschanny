@@ -72,7 +72,10 @@
     ],
 
     "visit": "visiter",
-    "published": "publié en"
+    "published": "publié en",
+    "style":"style",
+    "tech":"techno"
+
   },
   "contact": {
     "title": "Contact",

@@ -103,8 +103,8 @@ export interface ShellProps extends WrapperProps {
   className: string;
 }
 
-export interface WrapperScrollerProps{
-children
+export interface WrapperScrollerProps {
+  children;
 }
 
 // General props for pages received from routing
@@ -144,18 +144,20 @@ export interface ImageData {
   description: string;
   cols: number;
   rows: number;
-  objectFit: "cover"|"contain";
+  objectFit: "cover" | "contain";
   objectPosition: string;
   backgroundColor: string;
   width: string;
   height: string;
 }
 
-export interface Project {
+export interface Projects {
   title: string;
   items: ProjectData[];
   visit: string;
   published: string;
+  style: string;
+  tech: string;
 }
 export interface ProjectData {
   name: string;
@@ -167,20 +169,20 @@ export interface ProjectData {
   type: string[];
   images: ImageData[];
   body: string;
- palette: string[];
+  palette: string[];
   fonts: string[];
 }
 
 export interface ProjectGalleryProps {
-  projects: ProjectData[];
+  // projects: Projects;
   section?: PageProps;
 }
 
 export interface ImageModalProps {
   open: boolean;
   handleClose: () => void;
-  itemData: ProjectDetails;
+  data: ProjectData[];
   currentProject: number;
   setCurrentProject: (index: number) => void;
-  projects: ProjectDetails[];
+  section?: PageProps;
 }
