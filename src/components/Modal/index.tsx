@@ -134,7 +134,8 @@ const ImageModal: React.FC<ImageModalProps> = ({
     "current project",
     currentProject,
     "description",
-    data[currentProject].description
+    data[currentProject].description,
+    data[currentProject].images[0].title
   );
   return (
     <Modal
@@ -169,13 +170,13 @@ const ImageModal: React.FC<ImageModalProps> = ({
         <figure style={desktopStyle}>
           <img
             src={data[currentProject].images[0].src}
-            alt={t(`projects.items.${currentProject}.images[0].title`)}
+            alt={t(`projects.items.${currentProject}.images.0.title`)}
             style={imageStyle}
           />
           <figcaption style={figcaptionStyle}>
             <h6>
-              {t(`projects.items.${currentProject}.images[0].title`)} -{" "}
-              {t(`projects.items.${currentProject}.images[0].description`)}
+            {t(`projects.items.${currentProject}.images.0.title`)} -{" "}
+              {t(`projects.items.${currentProject}.images.0.description`)}
             </h6>
             <h6>1/{data[currentProject].images.length}</h6>
           </figcaption>
@@ -230,7 +231,7 @@ const ImageModal: React.FC<ImageModalProps> = ({
               {data[currentProject].techno.map(
                 (techno: string, index: number) => (
                   <li key={index}>
-                    <h4>{techno}</h4>
+                  <h4>{t(`projects.items.${currentProject}.techno.${index}`)}</h4>
                   </li>
                 )
               )}
@@ -253,7 +254,7 @@ const ImageModal: React.FC<ImageModalProps> = ({
             <ul>
               {data[currentProject].type.map((type: string, index: number) => (
                 <li key={index}>
-                  <h4>{type}</h4>
+                  <h4>{t(`projects.items.${currentProject}.type.${index}`)}</h4>
                 </li>
               ))}
             </ul>
@@ -265,13 +266,13 @@ const ImageModal: React.FC<ImageModalProps> = ({
           <figure style={logoStyle}>
             <img
               src={data[currentProject].images[1].src}
-              alt={t(`projects.items.${currentProject}.images[1].title`)}
+              alt={t(`projects.items.${currentProject}.images.1.title`)}
               style={imageStyle}
             />
             <figcaption style={figcaptionStyle}>
               <h6>
-                {t(`projects.items.${currentProject}.images[1].title`)} -{" "}
-                {t(`projects.items.${currentProject}.images[1].description`)}
+                {t(`projects.items.${currentProject}.images.1.title`)} -{" "}
+                {t(`projects.items.${currentProject}.images.1.description`)}
               </h6>
               <h6>2/{data[currentProject].images.length}</h6>
             </figcaption>
@@ -280,13 +281,13 @@ const ImageModal: React.FC<ImageModalProps> = ({
           <figure style={mobileStyle}>
             <img
               src={data[currentProject].images[2].src}
-              alt={t(`projects.items.${currentProject}.images[2].title`)}
+              alt={t(`projects.items.${currentProject}.images.2.title`)}
               style={imageStyle}
             />
             <figcaption style={figcaptionStyle}>
               <h6>
-                {t(`projects.items.${currentProject}.images[2].title`)} -{" "}
-                {t(`projects.items.${currentProject}.images[2].description`)}
+                {t(`projects.items.${currentProject}.images.2.title`)} -{" "}
+                {t(`projects.items.${currentProject}.images.2.description`)}
               </h6>
               <h6>3/{data[currentProject].images.length}</h6>
             </figcaption>
