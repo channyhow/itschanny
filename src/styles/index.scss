@@ -1,181 +1,64 @@
 // Variables and Fonts Import
-@use "reset";
-@use "vars" as v;
-@import "mixins";
+@use "./reset";
+@use "./vars" as v;
+@use "./mixins";
+@use "./fonts.scss";
 
-// Fonts
-@each $family, $urls in (
-  "Antonio": (
-    "semi-bold": (
-      "/fonts/Antonio/static/Antonio-SemiBold.ttf",
-      600,
-      normal,
-    ),
-  ),
-  "Inter": (
-    "light": (
-      "/fonts/Inter/static/Inter-Light.ttf",
-      300,
-      normal,
-    ),
-    "regular": (
-      "/fonts/Inter/static/Inter-Regular.ttf",
-      400,
-      normal,
-    ),
-  ),
-  "EB Garamond": (
-    "regular": (
-      "/fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf",
-      normal,
-      normal,
-    ),
-    "italic": (
-      "/public/fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf",
-      normal,
-      italic,
-    ),
-  )
-) {
-  @each $style, $values in $urls {
-    @font-face {
-      font-family: '#{$family}';
-      src: url(nth($values, 1)) format("truetype");
-      font-weight: nth($values, 2);
-      font-style: nth($values, 3);
-    }
-  }
-}
-
-// Setting base font size for easy rem calculations
+// Global Styles
 html {
   font-size: 62.5%; // 1rem = 10px
   scroll-behavior: smooth;
   overflow-x: hidden;
-
-  &::-webkit-scrollbar {
-    display: none; // Hide scrollbar for Chrome, Safari, and Opera
-  }
-  -ms-overflow-style: none; // Hide scrollbar for IE and Edge
-  scrollbar-width: none; // Hide scrollbar for Firefox
 }
 
-// Global box-sizing, fonts, and body background
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
 body {
+  @include mixins.flex-center(column);
   margin: 0;
   padding: 0;
-  font-family: "Inter", sans-serif; // Changed to Inter for better readability
-  font-size: 1.6rem; // Sets default font size to 16px
-  color: black;
-  background-color: v.$lightbeige;
-  letter-spacing: -.02em;
-  line-height: 1.6; // Adjusted for better readability
-  &::-webkit-scrollbar {
-    display: none; // Hide scrollbar for Chrome, Safari, and Opera
-  }
-  -ms-overflow-style: none; // Hide scrollbar for IE and Edge
-  scrollbar-width: none; // Hide scrollbar for Firefox
-}
-
-// Typography - Global Styles
-
-p {
-  color: #666153;
-}
-
-h2, h4, h5, h6 {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-h1 {
-  font-family: "Bodoni Moda", serif;
-  font-size: 4.8rem; // Adjusted for balance with body text
-  font-weight: 500;
-  letter-spacing: -1px;
-  text-transform: uppercase;
-  @media (max-width: 768px) {
-    font-size: 3.6rem; // Adjusted for smaller screens
-    letter-spacing: -0.5px;
-  }
-}
-
-h2 {
-  font-size: 3rem;
   font-family: "Urbanist", sans-serif;
-}
-
-h3 {
-  font-size: 2.4rem;
-  font-family: "Urbanist", sans-serif;
-}
-
-h4 {
-  font-size: 2rem;
-  font-family: "Urbanist", sans-serif;
-}
-
-h5 {
+  // text-transform: uppercase;
   font-size: 1.6rem;
-  font-family: "Urbanist", sans-serif;
+  letter-spacing: -.02em;
+  line-height: 1.6;
 }
 
-h6 {
-  font-size: 1.4rem;
-  font-family: "Urbanist", sans-serif;
-}
-
-// Utilities
 a {
   text-decoration: none;
-  color: inherit; // Ensures links use the body's text color
+  color: inherit;
 }
 
 ul, ol {
   list-style: none;
 }
 
-// Layout Styles for root, sections, and containers
-#root {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0 1rem;
+// Typography
+h1 {
+  font-family: 'Bodoni Moda', serif;
+  @include mixins.responsive-text(4.8rem, 3.6rem, 3.2rem);
+  font-weight: 500;
+  letter-spacing: -1px;
+  text-transform: uppercase;
 }
 
-// Responsive Design Adjustments
-@media screen and (max-width: 1440px) {
-  body {
-    font-size: 1.4rem; // Adjust base font size for smaller devices
-  }
+h2, h3, h4, h5, h6 {
+  @include mixins.flex-center(row, flex-start, center);
+  font-family: "Urbanist", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 
-  h1 {
-    font-size: 3.6rem; // Reduced font size for h1 on smaller screens
-  }
+h2 { @include mixins.responsive-text(3rem, 2.4rem, 2rem); }
+h3 { @include mixins.responsive-text(2.4rem, 2rem, 1.8rem); }
+h4 { @include mixins.responsive-text(2rem, 1.6rem, 1.4rem); }
+h5 { @include mixins.responsive-text(1.6rem, 1.2rem, 1rem); }
+h6 { @include mixins.responsive-text(1.4rem, 1rem, 0.8rem); }
 
-  h2 {
-    font-size: 2.4rem; // Reduced font size for h2 on smaller screens
-  }
-
-  h3 {
-    font-size: 2rem; // Reduced font size for h3 on smaller screens
-  }
-
-  h4 {
-    font-size: 1.6rem; // Reduced font size for h4 on smaller screens
-  }
-
-  h5 {
-    font-size: 1.2rem; // Reduced font size for h5 on smaller screens
-  }
-
-  h6 {
-    font-size: 1rem; // Reduced font size for h6 on smaller screens
-  }
+// Root Container
+#root {
+  @include mixins.flex-center(column);
+  padding: 0 1rem;
 }

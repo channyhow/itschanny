@@ -1,4 +1,4 @@
-import { CSSProperties, React, RefObject } from "react";
+import { CSSProperties, ReactNode, RefObject } from "react";
 
 // Configuration for any grid layout
 export interface GridConfig {
@@ -7,88 +7,87 @@ export interface GridConfig {
   gap: string;
 }
 
-// Extend React.HTMLProps for common HTML element props and add custom ones
-// export interface SectionProps extends React.HTMLProps<HTMLElement> {
-//   sectionRef: React.RefObject<HTMLDivElement>;
-//   // current: React.RefObject<HTMLDivElement>;
-//   // isActive: boolean; // More explicit than 'current' for indicating active state
-//   backgroundColor?: string;
-//   flexDirection?: "row" | "column";
-//   justifyContent?: "flex-start" | "center" | "flex-end" | "space-between";
-//   alignItems?: "flex-start" | "center" | "flex-end";
-//   flexWrap?: "wrap" | "nowrap" | "wrap-reverse";
-//   minHeight?: string;
-//   display?: string;
-//   padding?: string;
-//   id: string;
-//   title: string;
-//   sectionColor?: string;
-//   containerColor?: string;
-//   pinSpacerColor?: string;
-//   headerColor?: string;
-//   footerColor?: string;
-//   margin?: string;
-//   children: React.ReactNode;
-//   height?: string;
-//   className?: string;
-//   // sectionRef, children
-// }
+export interface UseCurrentSectionReturn {
+  currentSection: string;
+  updateSection: (newSection: string) => void;
+}
+
+// Props for a container component
 export interface ContainerProps {
-  height?: string; // e.g., '75vh', '500px'
   title?: string;
   subtitle?: string;
   content1?: string;
   content2?: string;
-  maxWidth?: string;
-  width?: string;
-  padding?: string;
-  margin?: string;
-  textAlign?: "left" | "center" | "right";
-  color?: string;
-  children?: React.ReactNode;
-  backgroundColor?: string;
-  justifyContent?: "flex-start" | "center" | "flex-end" | "space-between";
-  alignItems?: "flex-start" | "center" | "flex-end";
-  key?: string;
-  display?: string;
-  flexDirection?: "row" | "column";
-  flexWrap?: "wrap" | "nowrap" | "wrap-reverse";
-  className: string;
-  marginBottom?: string;
-  minWidth?: string;
-  border?: string;
-}
-// Props for sections of a page, could be used in a layout component
-export interface SectionComponentProps {
-  section: SectionProps;
-  // sectionId: string;
-  ref: RefObject<unknown>;
-  className: string;
-  currentSection: string; // Add this if not already present
-  updateSection: (newSection: string) => void;
+  children?: ReactNode;
+  style?: CSSProperties;
+  // section: string;
 }
 
-// For components that act as wrappers or spacers
-export interface WrapperProps {
-  children: React.ReactNode;
+// Props for sections of a page// Props for sections of a page
+export interface SectionProps {
+  content: string[];
+  id: string;
+  title: string;
+  children?: ReactNode;
+  backgroundColor?: string;
+  headerBackgroundColor?: string; // Add this line
+  color: string;
+  padding: string;
+  sectionColor: string;
+  containerColor: string;
+  headerColor: string;
+  languageColor: string;
+  margin: string;
+  height: string;
+  style: CSSProperties;
   className?: string;
 }
 
-export interface PinSpacerProps extends WrapperProps {
-  backgroundColor: string;
-  justifyContent: "flex-start" | "center" | "flex-end";
-  top?: string;
-  bottom?: string;
-  extraStyle?: CSSProperties;
-  currentSection?: string;
-  pinSpacerColor?: string;
+
+// Props for SectionComponent
+export interface SectionComponentProps {
+  section: SectionProps;
+  ref: RefObject<HTMLElement>;
+  className?: string;
+  currentSection: string;
+  updateSection: (newSection: string) => void;
 }
 
+// Props for Header component
+export interface HeaderProps {
+  sections: SectionProps[];
+  currentSection: string;
+  style: CSSProperties;
+  background: string;
+}
+
+export interface FooterProps {
+  style: CSSProperties;
+}
+
+// Props for components that act as wrappers or spacers
+export interface WrapperProps {
+  children: ReactNode;
+  className?: string;
+}
+
+export interface WrapperScrollerProps {
+  children: ReactNode;
+}
+
+export interface PinSpacerProps {
+  style: CSSProperties;
+  children: React.ReactNode;
+  className: string;
+  // currentSection: string;
+}
+
+// Props for a card component
 export interface CardProps {
-  data: ProjectProps;
+  data: ProjectData;
 }
 
-// Simplified and corrected ShellProps
+// Props for Shell component, simplified and corrected
 export interface ShellProps extends WrapperProps {
   display: string;
   flexDirection?: "row" | "column";
@@ -103,8 +102,9 @@ export interface ShellProps extends WrapperProps {
   className: string;
 }
 
-export interface WrapperScrollerProps {
-  children;
+// Props for the main content body that might include multiple sections
+export interface BodyContentProps {
+  sections: SectionProps[];
 }
 
 // General props for pages received from routing
@@ -115,29 +115,20 @@ export interface PageProps {
   description?: string;
 }
 
-// Props for the main content body that might include multiple sections
-export interface BodyContentProps {
-  sections: SectionProps[];
-  // current: React.RefObject<HTMLDivElement>;
-}
-
+// Props for a common page component
 export interface CommonPageProps {
-  section: PageProps;
+  section: SectionProps;
   currentSection?: string;
   sectionId?: string;
 }
 
+// State for section context
 export interface SectionContextState {
   currentSection: string;
   updateSection: (sectionId: string) => void;
 }
 
-export interface CommonProps {
-  className: string;
-}
-
-// src/types.ts
-
+// Image data interface
 export interface ImageData {
   src: string;
   title: string;
@@ -151,6 +142,7 @@ export interface ImageData {
   height: string;
 }
 
+// Projects interface
 export interface Projects {
   title: string;
   items: ProjectData[];
@@ -159,6 +151,8 @@ export interface Projects {
   style: string;
   tech: string;
 }
+
+// Project data interface
 export interface ProjectData {
   name: string;
   title: string;
@@ -173,11 +167,12 @@ export interface ProjectData {
   fonts: string[];
 }
 
+// Props for project gallery component
 export interface ProjectGalleryProps {
-  // projects: Projects;
   section?: PageProps;
 }
 
+// Props for image modal component
 export interface ImageModalProps {
   open: boolean;
   handleClose: () => void;
@@ -185,4 +180,12 @@ export interface ImageModalProps {
   currentProject: number;
   setCurrentProject: (index: number) => void;
   section?: PageProps;
+}
+
+// Type for page components
+export type PageComponent = React.ComponentType<CommonPageProps>;
+
+// Mapping interface for page content components
+export interface PageContentMap {
+  [key: string]: PageComponent;
 }

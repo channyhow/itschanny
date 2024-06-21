@@ -4,27 +4,14 @@
 .wrapper__scroller {
   position: relative;
   z-index: 1;
-  overflow-y: auto; /* Enables vertical scrolling */
-  // margin: 40px 0; /* Ensure it doesn't overlap with the header */
-  // border: 3px solid orange;
-  // min-height: 100vh;
-  // display: flex;
+  overflow-y: auto; // Ensures vertical scroll within this container
   display: flex;
-  flex-direction: column;
-    align-items: center;
-    justify-content: center;
-// 
+  flex-direction: column; // Add if you want children to stack vertically
+}
 
 .scroll-content {
-  display: flow-root;
+  display: block; // Default or flex if you need flex behaviors
   overflow-y: auto;
-  scroll-behavior: smooth;  
-  flex:1;
-// width: 100%;
-// max-width: 1400px;
-  // height: calc(100vh - 40px); /* Adjust based on header height to avoid overlap */
-  // min-height: 100vh;
-  // border: 3px solid blue;
-
-}
+  scroll-behavior: smooth;
+  flex: 1; // Ensures it takes up all available space in the flex container
 }

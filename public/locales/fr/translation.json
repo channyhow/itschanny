@@ -88,6 +88,9 @@
     "messagePlaceholder": "Entrez votre message",
     "submitButton": "Envoyer",
     "errorTitle": "Oups",
-    "errorMessage": "Il y a un petit soucis avec l'adresse e-mail, pourriez-vous re-vérifier?"
+    "errorMessage": "Il y a un petit soucis avec l'adresse e-mail, pourriez-vous re-vérifier?",
+    "content": [
+      "Que vous cherchiez à collaborer, que vous ayez une question, ou simplement envie de partager vos réflexions, je suis toujours ravi d'avoir de vos nouvelles."," Vos retours et questions sont précieux car ils m'aident à progresser et à m'améliorer."," N'hésitez pas à me contacter — commençons une conversation et créons ensemble quelque chose de formidable !"
+    ]
   }
 }

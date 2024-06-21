@@ -1,18 +1,10 @@
 import { useCallback, useState } from 'react';
+import { UseCurrentSectionReturn } from '../types';
 
-interface UseCurrentSectionReturn {
-  currentSection: string;
-  updateSection: (newSection: string) => void;
-}
 
 export const useCurrentSection = (): UseCurrentSectionReturn => {
   const [currentSection, setCurrentSection] = useState<string>('home');
 
-//   const updateSection = useCallback((newSection: string) => {
-//     console.log(`Updating section from ${currentSection} to ${newSection}`);
-//     setCurrentSection(newSection);
-//     window.history.replaceState({}, '', `#${newSection}`);
-//   }, [currentSection]);
 
 const updateSection = useCallback((newSection: string) => {
   console.log(`Updating section from ${currentSection} to ${newSection}`);

@@ -1,19 +1,18 @@
-// Example mixin for media queries
-@mixin respond-to($breakpoint) {
-    @if $breakpoint == 'small' {
-      @media (max-width: 640px) { @content; }
-    }
-    @if $breakpoint == 'medium' {
-      @media (max-width: 768px) { @content; }
-    }
-    @if $breakpoint == 'medium' {
-        @media (max-width: 1440px) { @content; }
-      }  }
-  
-  // Flexbox centering mixin
-  @mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+// _mixins.scss
+
+@mixin flex-center($direction: column, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin responsive-text($desktop-size, $tablet-size, $phone-size) {
+  font-size: $desktop-size;
+  @media (max-width: 1440px) {
+    font-size: $tablet-size;
   }
-  
+  @media (max-width: 768px) {
+    font-size: $phone-size;
+  }
+}

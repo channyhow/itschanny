@@ -85,6 +85,10 @@
     "messagePlaceholder": "Enter your message",
     "submitButton": "Submit",
     "errorTitle": "Oopsie Daisy",
-    "errorMessage": "There’s something about the email address entered, could you have a quick look?"
+    "errorMessage": "There’s something about the email address entered, could you have a quick look?",
+    "content": [
+      "Whether you're looking for collaboration, have a question, or just want to share your thoughts,",
+      "I'm always eager to hear from you. Your feedback and inquiries are invaluable as they help me grow and improve.", "Don't hesitate to reach out — let's start a conversation and make something great together!"
+    ]
   }
 }

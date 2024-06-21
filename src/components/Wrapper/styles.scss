@@ -2,11 +2,10 @@
 
 /* Wrapper: General container for the app */
 .wrapper {
-  position: relative; /* Serves as the positioning context for fixed/sticky children */
-  width: 100vw;
-  overflow-x: hidden;
+  position: relative;
+  width: 100vw; // Consistent with the inline style, remove if not needed
+  overflow-x: hidden; // Suggested if horizontal overflow is not desired
   min-height: 100vh;
   display: flex;
-flex-direction: column;
-
+  flex-direction: column;
 }

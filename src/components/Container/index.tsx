@@ -1,49 +1,39 @@
+import { CSSProperties } from "react";
 import { ContainerProps } from "../../types";
-// import "./styles.scss"; // Assuming you have a separate stylesheet for container
+import { useMediaQuery } from "@mui/material";
+// import { useTranslation } from "react-i18next";
 
 
 const Container: React.FC<ContainerProps> = ({
-  height = "auto",
-  width,
-  maxWidth,
-  minWidth,
-  margin,
-  padding, // Ensured padding is properly passed
-  textAlign = "left", // Provided a default value
-  color,
-  backgroundColor,
-  children,
-  justifyContent,
-  display,
-  flexDirection,
-  flexWrap,
-  className,
-  marginBottom,
-  border
-}) => {
-  const containerStyle: React.CSSProperties = {
-    // Ensured correct typing for style object
-    height,
-    width,
-    maxWidth, // Applied width
-    padding, // Applied padding
-    margin,
-    textAlign,
-    color,
-    backgroundColor,
-    display, // Assuming you want a flex container; adjust as necessary
-    flexDirection, // Default flex direction, adjust as necessary
-    // alignItems: textAlign === 'center' ? 'center' : textAlign === 'right' ? 'flex-end' : 'flex-start',
-    // Adjusted alignment based on textAlign for more intuitive styling
-    justifyContent,
-    flexWrap,
-    marginBottom,
-    minWidth,
-    border
-  };
 
+  children
+}) => {
+  // const { t } = useTranslation();
+  const isMobile = useMediaQuery("(max-width:425px)");
+
+  const containerStyle: CSSProperties = {
+    width: isMobile?"100%":"80%",
+    minWidth: "300px",
+    maxWidth: "1000px",    
+    display: "flex",
+    flexDirection: "column",
+    justifyContent:'center',
+    alignItems:'center'
+  };
   return (
-    <div className={className} style={containerStyle}>
+    <div style={containerStyle}>
+            {/* <h1
+        style={{
+          // transform: isMobile ? "" : "rotate(270deg)",
+          // transformOrigin: isMobile ? "" : "center center",
+          zIndex: "50",
+          textAlign: 'left',
+          width: '100%',
+          marginBottom: '20px'
+        }}
+      >
+        {t(`${title}`)}
+      </h1> */}
       {children}
     </div>
   );

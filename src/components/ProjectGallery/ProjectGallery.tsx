@@ -14,7 +14,7 @@ export default function ProjectGallery({
   const [hoveredButton, setHoveredButton] = useState(false);
   const [currentItem, setCurrentItem] = useState(0);
   const [open, setOpen] = useState(false);
-  const isMobile = useMediaQuery("(max-width:425px)");
+  const isMobile = useMediaQuery("(max-width:768px)");
   const { t } = useTranslation();
 
   const handleMouseEnter = (index: number) => {
@@ -44,9 +44,11 @@ export default function ProjectGallery({
     <article
       style={{
         display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "space-around",
-        width: "100%",
+        flexWrap: isMobile?"wrap":"nowrap",
+        justifyContent: isMobile?"center":"space-between",
+        width: "100%", // full width of the viewport
+        // minWidth:"300px",
+        // maxWidth: "1200px",
       }}
     >
  
@@ -64,7 +66,7 @@ export default function ProjectGallery({
               backgroundColor: hoveredImage === index ? 'rgba(255,255,255,0.1)' : 'transparent',
               transition: 'all 0.5s ease',
               padding: '1rem',
-              border: hoveredImage === index ? '1px solid' : '1px solid transparent',
+              border: hoveredImage === index ? `1px solid ${section?.color}` : '1px solid transparent',
               margin: isMobile ? '1rem 0' : '2rem 0'
             }}
           >
@@ -93,14 +95,14 @@ export default function ProjectGallery({
             </Button>
             <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', marginTop: '10px' }}>
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-                <h4 style={{ color: '#a07575', textTransform: 'uppercase', fontWeight: '500' }}>
+                <h4 style={{ color:section?.color, textTransform: 'uppercase', fontWeight: '500' }}>
                   {t(`projects.items.${index}.name`)}
                 </h4>
-                <h6 style={{ color: '#a07575' }}>{t(`projects.items.${index}.title`)}</h6>
-                <h6 style={{ color: '#a07575' }}>{t(`projects.items.${index}.date`)}</h6>
+                <h6 style={{ color:section?.color }}>{t(`projects.items.${index}.title`)}</h6>
+                <h6 style={{ color:section?.color }}>{t(`projects.items.${index}.date`)}</h6>
                 <div style={{ display: 'flex' }}>
                   {item.techno.map((tech, techIndex) => (
-                    <h6 key={techIndex} style={{ color: '#a07575', marginRight: '0.5rem' }}>
+                    <h6 key={techIndex} style={{ color: section?.color, marginRight: '0.5rem' }}>
                       {tech}
                     </h6>
                   ))}

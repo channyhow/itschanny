@@ -6,12 +6,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact, faNodeJs, faSass } from "@fortawesome/free-brands-svg-icons";
 import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
+import Container from "../components/Container";
+// import useCurrentSectionData from "../hooks/useCurrentSectionData";
 
 const About = ({ section }: CommonPageProps) => {
   const isMobile = useMediaQuery("(max-width:425px)");
   const [gridOn, setGridOn] = useState(false);
   const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
   const { t } = useTranslation();
+  // const sectionData = useCurrentSectionData(section.id);
+
 
   const skills = [
     { name: "React", color: "#D93100", icon: faReact },
@@ -45,13 +49,14 @@ const About = ({ section }: CommonPageProps) => {
     padding: gridOn ? "1em" : "1rem",
     height: gridOn ? "100%" : "",
     minHeight: gridOn ? "140px" : "",
-    backgroundColor: gridOn ? "rgba(255,255,255,0.5)" : "",
+    backgroundColor: gridOn ? "rgba(255,255,255,0.5)" : "transparent",
     fontFamily: gridOn ? "Urbanist" : "",
     transition: "all 0.5s ease",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     flexWrap: "wrap",
+    
   };
 
   const gridContainerStyle: CSSProperties = {
@@ -61,11 +66,15 @@ const About = ({ section }: CommonPageProps) => {
     minHeight: "350px",
     padding: isMobile ? "0" : "1em 0",
     justifyContent: "center",
-    width: "100%",
+    // width: "100%",
     alignItems: "start",
     justifyItems: "center",
     flexDirection: gridOn && !isMobile ? "row" : "column",
     transition: "all 0.5s ease",
+
+    width: "100%", // full width of the viewport
+    minWidth:"300px",
+    maxWidth: "1200px",
   };
 
   const buttonStyle: CSSProperties = {
@@ -73,7 +82,7 @@ const About = ({ section }: CommonPageProps) => {
     fontSize: "1rem",
     cursor: "pointer",
     backgroundColor: "transparent",
-    color: gridOn ? "rgb(214 243 55)" : "#fff",
+    color: gridOn ? "rgb(214 243 55)" : section.color,
     transition: "all 0.5s ease",
     border: "none",
     whiteSpace: "nowrap",
@@ -83,15 +92,11 @@ const About = ({ section }: CommonPageProps) => {
     transition: "color 0.5s ease",
   };
 
+
+
   return (
-    <div
-      style={{
-        margin: "40px auto",
-        padding: isMobile ? "1rem" : "2rem",
-        maxWidth: "1200px",
-        width: "100%",
-      }}
-    >
+    <Container>
+
       <div
         style={{
           display: "flex",
@@ -99,13 +104,16 @@ const About = ({ section }: CommonPageProps) => {
           justifyContent: "space-between",
           alignItems: "baseline",
           padding: "1em 0",
-          width: "auto",
+          width: "100%",
         }}
       >
         <h1
           style={{
-            color: gridOn ? "#C082B9" : "white",
+            color: gridOn ? "#C082B9" : section.color,
             fontFamily: gridOn ? "Urbanist" : "",
+             zIndex: "50",
+          textAlign: 'left',
+          marginBottom: '20px'
           }}
         >
           {t(`${section.id}.title`)}
@@ -180,7 +188,7 @@ const About = ({ section }: CommonPageProps) => {
           );
         })}
       </div>
-    </div>
+    </Container>
   );
 };
 

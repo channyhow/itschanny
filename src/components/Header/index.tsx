@@ -1,66 +1,46 @@
 import { HashLink } from "react-router-hash-link";
 import "./styles.scss";
-import { PageProps } from "../../types";
+import { HeaderProps } from "../../types";
 import { useMediaQuery } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
-interface HeaderProps {
-  sections: PageProps[];
-  className: string;
-  currentSection?: string;
-  headerColor?: string;
-}
-
 export default function Header({
   sections,
-  className,
+  background,
   currentSection,
+  style
 }: HeaderProps) {
   const isMobile = useMediaQuery("(max-width:425px)");
-const { t } = useTranslation();
-
+  const { t } = useTranslation();
 
   const renderSections = () => {
-    if (isMobile) {
-      return sections.slice(1).map((section) => (
-        <HashLink
-          smooth
-          to={`#${section.id}`}
-          key={section.id}
-          className={`nav-link ${
-            currentSection === section.id ? "active" : ""
-          }`}
-        >
-          <h6 style={{ fontWeight: "600" }}>{t(`${section.id}.title`)}</h6>
-        </HashLink>
-      ));
-    } else {
-      return sections.map((section) => (
-        <HashLink
-          smooth
-          to={`#${section.id}`}
-          key={section.id}
-          className={`nav-link ${
-            currentSection === section.id ? "active" : ""
-          }`}
-        >
-          <h6 style={{ fontWeight: "600" }}>{t(`${section.id}.title`)}</h6>
-        </HashLink>
-      ));
-    }
+    const sectionItems = isMobile ? sections.slice(1) : sections;
+
+    return sectionItems.map((item) => (
+      <HashLink
+        smooth
+        to={`#${item.id}`}
+        key={item.id}
+        className={`nav-link ${currentSection === item.id ? "active" : ""}`}
+      >
+        <h6 style={{ fontWeight: "600" }}>{t(`${item.id}.title`)}</h6>
+      </HashLink>
+    ));
   };
 
   return (
     <header
-      className={`${className} header-main`}
-      style={{ display: "flex", justifyContent: "flex-end", zIndex: "700" }}
+      style={
+        style
+      }
     >
       <nav
         style={{
           display: "flex",
           justifyContent: "space-evenly",
-          width: "100%",
-          // flexWrap:"wrap",
+          border: "1px solid",
+          width:"auto",
+backgroundColor: background
         }}
       >
         {renderSections()}

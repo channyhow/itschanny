@@ -1,38 +1,18 @@
-import React, { CSSProperties, useEffect, useState } from "react";
-// import { useCurrentSection } from "../../hooks/useCurrentSection";
-// import { useSectionObserver } from "../../hooks/useSectionObserver";
-import pagesContent from  "./../../data/pagesContent.json";
-
+import { CSSProperties, useEffect, useState } from "react";
 import _ from "lodash"; // Import lodash for debouncing
+import { PinSpacerProps } from "../../types";
 
-interface PinSpacerProps {
-  style: CSSProperties;
-  children: React.ReactNode;
-  className: string;
-  currentSection: string; // Add this line
-}
 
 const PinSpacer = ({
   className,
   style,
   children,
-  currentSection,
 }: PinSpacerProps) => {
-  // const { currentSection } = useCurrentSection();
   const [isScrolling, setIsScrolling] = useState(false);
 
-  // Function to find the current section data
-
-const currentSectionData =pagesContent.sections.find(
-  section => section.id === currentSection
-)
-
-  // Compute dynamic style based on currentSection and scroll state
+  // Compute dynamic style based on scroll state
   const dynamicStyle: CSSProperties = {
     ...style,
-    backgroundColor: currentSectionData?.pinSpacerColor || 'hotpink',
-    // display: currentSection === 'home' ? 'none' : 'flex',
-    border:'1px solid',
     zIndex: "300",
     display: "flex",
     opacity: isScrolling ? 0 : 0.8, // Change opacity based on scroll state
@@ -56,7 +36,7 @@ const currentSectionData =pagesContent.sections.find(
       window.removeEventListener("scroll", handleScroll);
       debouncedSetScrolling.cancel(); // Cancel the debounce on unmount to avoid memory leaks
     };
-  }, [currentSection]);
+  }, []);
 
   return (
     <div className={className} style={dynamicStyle}>

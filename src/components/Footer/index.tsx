@@ -1,17 +1,18 @@
 // import { PageProps } from '../../types';
-import { useMediaQuery } from '@mui/material';
-import { Socials } from '../Socials/Socials';
-import './styles.scss';
-interface FooterProps {
-    className: string;
-    // currentSection: string; 
-   footerColor?: string;
+// import { useMediaQuery } from '@mui/material';
+import { FooterProps } from "../../types";
+import { Socials } from "../Socials/Socials";
+import "./styles.scss";
+// import { FooterProps } from '../../types';
 
-  }
-export default function Footer({className}:FooterProps) {
-    const isMobile = useMediaQuery("(max-width:425px)");
+export default function Footer({style}:FooterProps) {
+  // const isMobile = useMediaQuery("(max-width:425px)");
 
-    return(
-        <footer className={className} style={{width:'100%', display:'flex', justifyContent: isMobile ? "center": ""}}><Socials/></footer>
-    )
+  return (
+    <footer
+      style={style}
+    >
+      <Socials />
+    </footer>
+  );
 }

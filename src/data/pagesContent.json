@@ -3,20 +3,14 @@
     {
       "title": "Hi I'm Channy",
       "id": "home",
-      "sectionColor": "",
-      "containerColor": "rgb(206 202 72)",
-      "color": "#b7b0aa",
-      "pinSpacerColor": "#DD6144",
-      "titleColor": "#ceca4d",
-      "headerColor": "",
-      "footerColor": "",
-      "display": "flex",
-      "flexDirection": "row",
-      "margin": "auto auto",
-      "height": "90vh",
-      "justifyContent": "center",
-      "alignItems": "center",
-      "contenu": [
+      "sectionColor": "#FFF1D0",
+      "containerColor": "",
+      "color": "#00000",
+      "headerColor": "#07A0C3",
+      "languageColor": "#DD1C1A",
+      "padding": "auto",
+      "margin": "",
+      "content": [
         "Your local front end developer",
         "driven by the belief that design can inspire diversity and innovation",
         "as I continue to learn and grow.",
@@ -26,59 +20,44 @@
     {
       "title": "About",
       "id": "about",
-      "sectionColor": "#D1BABA",
-      "containerColor": "#F6F1EC",
-      "pinSpacerColor": "#C082B9",
-      "titleColor": "#ECE1E1",
-      "color": "#b7b0aa",
-      "headerColor": "",
-      "footerColor": "",
-      "display": "flex",
-      "flexDirection": "column",
-      "margin": "100px auto",
-      "height": "auto",
-      "justifyContent": "center",
-      "alignItems": "center",
-      "contenu": [
+      "sectionColor": "#F0C808",
+      "containerColor": "",
+      "headerColor": "#DD1C1A",
+      "languageColor": "#07A0C3",
+      "color": "#00000",
+      "padding": "100px auto",
+      "margin": "",
+      "content": [
         "Hi, I'm Channy, originally from Reunion Island. Over the past decade, my adventures have taken me across Asia and Australia, where I honed my skills in footwear design, blending aesthetics with practicality. The pandemic brought me back to France and opened up a new chapter in technology.",
         "Now, I'm a Paris-based front-end developer and designer, passionate about creating visually appealing and responsive applications. My toolkit includes React, TypeScript, and Sass, with a particular fondness for clean design and functionality. While I occasionally dive into backend technologies like Node.js, Express, and PostgreSQL, my heart truly belongs to the front-end.",
         "Fluent in both English and French, I collaborate effortlessly in diverse environments. With a background that spans different continents and industries, I offer a fresh perspective and a versatile approach, bringing a balanced blend of creativity and precision to every project.",
         "When I'm not coding, you'll find me running with dogs or any other living being, staying active, or enjoying the outdoors. I'm always eager to learn and grow, ready to tackle new challenges and create user-friendly digital experiences. If you're looking for a developer who is dedicated and passionate about their craft, let's connect!"
-    ]
+      ]
     },
     {
       "title": "Projects",
       "id": "projects",
-      "sectionColor": "",
+      "sectionColor": "#086788",
       "containerColor": "",
-      "pinSpacerColor": "#ceca4d",
-      "titleColor": "#CECA48",
-      "color": "#b7b0aa",
-      "headerColor": "",
-      "footerColor": "",
-      "display": "flex",
-      "flexDirection": "row",
-      "margin": "40px auto",
-      "height": "auto",
-      "justifyContent": "center",
-      "alignItems": "center"
+      "headerColor": "#FFF1D0",
+      "languageColor": "#F0C808",
+      "color": "#FFFFFF",
+      "padding": "40px auto",
+      "margin": ""
     },
     {
       "title": "Contact",
       "id": "contact",
-      "sectionColor": "#D1BABA",
+      "sectionColor": "#07A0C3",
       "containerColor": "",
-      "pinSpacerColor": "#DDC1A2",
-      "titleColor": "#DD6144",
-      "color": "#b7b0aa",
-      "headerColor": "",
-      "footerColor": "",
-      "display": "flex",
-      "flexDirection": "column",
-      "margin": "100px auto",
-      "height": "auto",
-      "justifyContent": "center",
-      "alignItems": "center"
-    }
+      "headerColor": "#DD1C1A",
+      "languageColor": "#FFF1D0",
+      "color": "#FFFFFF",
+      "padding": "100px auto",
+      "margin": "",
+      "content": [
+        "Whether you're looking for collaboration, have a question, or just want to share your thoughts,",
+        "I'm always eager to hear from you. Your feedback and inquiries are invaluable as they help me grow and improve.", "Don't hesitate to reach out — let's start a conversation and make something great together!"
+      ]    }
   ]
 }

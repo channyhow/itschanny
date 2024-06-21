@@ -7,12 +7,16 @@ import Header from "./Header";
 import PinSpacer from "./PinSpacer";
 import SectionComponent from "./SectionComponent";
 import { BodyContentProps } from "../types";
-import LanguageSwitcher from "./LanguageToggle"; // Ensure correct import path
+import LanguageSwitcher from "./../components/LanguageSwitcher/LanguageToggle";
 
 function Body({ sections }: BodyContentProps) {
   const { currentSection, updateSection } = useCurrentSection();
   const sectionRefs = useAllSectionObservers(sections, updateSection);
   const isMobile = useMediaQuery("(max-width:425px)");
+
+  const currentSectionData = sections.find(
+    (section) => section.id === currentSection
+  );
 
   return (
     <div
@@ -22,24 +26,30 @@ function Body({ sections }: BodyContentProps) {
         flexDirection: "column",
         justifyContent: "center",
         overflow: "hidden",
-        alignItems: isMobile ? "center" : "flex-start", // Adjust alignment for non-mobile
+        alignItems: "center",
       }}
     >
       <PinSpacer
         className={getClassName("pinSpacer", currentSection)}
         style={{
-          justifyContent: isMobile ? "center" : "flex-start",
           position: "fixed",
-          width: "auto",
-          top: "20px",
-          left: isMobile ? "0" : "20px",
+          width: isMobile ? "90%" : "95%",  // Adjusted for desktop to center
+          top: isMobile ? "10px" : "20px",
+          left: isMobile ? "" : "50%",      // Center horizontally for desktop
+          transform: isMobile ? "" : "translateX(-50%)", // Ensure it's centered
           textAlign: isMobile ? "center" : "left",
         }}
-        currentSection={currentSection}
       >
-        <Footer className={getClassName("footer", currentSection)} />
+        <Footer
+          style={{
+            width: isMobile ? "100%" : "auto",
+            display: "flex",
+            justifyContent: "space-evenly",
+            border: "1px solid",
+            backgroundColor: currentSectionData?.headerColor || "hotpink",
+          }}
+        />
       </PinSpacer>
-      <LanguageSwitcher />
       {sections.map((section) => (
         <SectionComponent
           key={section.id}
@@ -50,22 +60,25 @@ function Body({ sections }: BodyContentProps) {
           ref={sectionRefs[section.id]}
         />
       ))}
-
       <PinSpacer
         className={getClassName("pinSpacer", currentSection)}
         style={{
-          justifyContent: isMobile ? "center" : "flex-end",
+          justifyContent: "space-between",
           position: "fixed",
-          width: isMobile ? "80%" : "auto",
-          bottom: "20px",
-          right: isMobile ? "0" : "20px",
-          textAlign: isMobile ? "center" : "right",
+          width: isMobile ? "90%" : "95%",  // Consistent with the top PinSpacer
+          bottom: isMobile ? "10px" : "20px",
+          // left: isMobile ? "" : "50%",      // Center horizontally for desktop
+          // transform: isMobile ? "" : "translateX(-50%)", // Ensure it's centered
         }}
-        currentSection={currentSection}
       >
+        <LanguageSwitcher color={currentSectionData?.languageColor} />
         <Header
           sections={sections}
-          className={getClassName("header", currentSection)}
+          currentSection={currentSection}
+          style={{
+            width: isMobile ? "80%" : "auto",
+          }}
+          background={currentSectionData?.headerColor || "hotpink"}
         />
       </PinSpacer>
     </div>

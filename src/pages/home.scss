@@ -1,0 +1,51 @@
+.container {
+    background-color: #ffe8d6; /* Lighter shade for a warm feel */
+    color: #333; /* Darker text for better readability */
+    border: 2px solid #fa8072; /* A soft red for the border */
+    padding: 20px;
+    max-width: 800px;
+    margin: 30px auto; /* Centering the container */
+}
+
+.header-links {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd; /* Subtle separation */
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.skill {
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #fa8072; /* Accent color */
+    color: white;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.skill:hover {
+    transform: scale(1.1); /* Interactive effect */
+}
+
+.main-content h1 {
+    font-size: 2.4rem;
+    color: #333;
+}
+
+.main-content p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.2rem;
+}
