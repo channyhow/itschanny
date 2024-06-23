@@ -1,26 +1,25 @@
 {
   "home": {
-    "title": "hey, c'est Channy",
-    "content": "Développeuse front-end basée à Paris, convaincue que le design peut créer la diversité et l'innovation, tout en continuant à apprendre et évoluer.",
-    "call_to_action": "Connectons et transformons les idées en réalité."
+    "title": "Salut, c'est Channy",
+    "content": "Développeuse front-end locale, animée par la conviction que le design peut inspirer la diversité et l'innovation. Continuellement en apprentissage, transformons ensemble les idées en réalité.",
+    "call_to_action": "Connectons-nous et transformons les idées en réalité numérique."
   },
   "about": {
     "title": "À propos",
     "content": [
-      "Bonjour, je suis Channy, originaire de l'île de la Réunion. Au cours de la dernière décennie, mes aventures m'ont mené à travers l'Asie et l'Australie, où j'ai perfectionné mes compétences en conception de chaussures, alliant esthétique et praticité. La pandémie m'a ramené en France et a ouvert un nouveau chapitre dans la technologie.",
-      "Maintenant, je suis développeur et designer front-end basé à Paris, passionné par la création d'applications visuellement attrayantes et réactives. Mon ensemble d'outils comprend React, TypeScript et Sass, avec une affection particulière pour le design propre et fonctionnel. Bien que je plonge occasionnellement dans les technologies back-end comme Node.js, Express et PostgreSQL, mon cœur appartient vraiment au front-end.",
-      "Fluent en anglais et en français, je collabore sans effort dans des environnements diversifiés. Avec un parcours qui s'étend sur différents continents et industries, j'offre une perspective fraîche et une approche polyvalente, apportant un mélange équilibré de créativité et de précision à chaque projet.",
-      "Quand je ne code pas, vous me trouverez en train de courir avec des chiens ou tout autre être vivant, de rester actif ou de profiter du plein air. Je suis toujours désireux d'apprendre et de grandir, prêt à relever de nouveaux défis et à créer des expériences numériques conviviales. Si vous cherchez un développeur dédié et passionné par son métier, connectons-nous !"
+      "Salut, je suis Channy, originaire de l'île de la Réunion. Au cours de la dernière décennie, mes aventures m'ont amenée à travers l'Asie et l'Australie, où j'ai affiné mes compétences en design de chaussures, mêlant esthétique et fonctionnalité. La pandémie m'a ramenée en France et a ouvert un nouveau chapitre dans le domaine de la technologie.",
+      "Je suis maintenant développeuse et designer front-end basée à Paris, passionnée par la création d'applications visuellement attrayantes et réactives. Mon arsenal d'outils comprend React, TypeScript et Sass, avec un goût particulier pour le design épuré et fonctionnel. Bien que je plonge occasionnellement dans les technologies backend telles que Node.js, Express et PostgreSQL, mon cœur est véritablement ancré dans le front-end.",
+      "Fluente en anglais et en français, je collabore sans effort dans des environnements diversifiés. Avec un parcours qui couvre différents continents et secteurs, j'apporte une perspective fraîche et une approche polyvalente, en conjuguant créativité et précision dans chaque projet.",
+      "Lorsque je ne code pas, vous pouvez me trouver en train de courir avec des chiens ou toute autre créature vivante, en restant active ou en profitant du plein air. Toujours avide d'apprendre et de grandir, je suis prête à relever de nouveaux défis et à créer des expériences digitales conviviales. Si vous recherchez une développeuse dédiée et passionnée par son métier, connectons-nous !"
     ]
   },
-
   "projects": {
     "title": "Projets",
     "items": [
-        {
+      {
         "name": "JL Albany",
         "title": "Portfolio de Jean-Ludovic Albany",
-        "description": "Jean-Ludovic Albany est un expert en suivi publicitaire basé à Paris. Son portfolio met en valeur son expertise de manière simple et graphique. Le design est simple mais efficace, avec des couleurs blanc cassé, noir, gris et jaune ensoleillé. Le site web réactif est conçu pour être visuellement attrayant sur tous les appareils. Le logo a été repensé pour s'adapter à l'état d'esprit et à la marque de JL.",
+        "description": "Jean-Ludovic Albany est un expert parisien en suivi publicitaire. Son portfolio présente son expertise de manière directe et graphique. Le design est simple mais efficace, mettant en vedette des couleurs blanc cassé, noir, gris, et jaune ensoleillé. Le site web, réactif, est conçu pour être visuellement attrayant sur tous les appareils. Le logo a été redessiné pour correspondre à l'état d'esprit et à la marque de JL.",
         "techno": ["SASS", "Vite", "React", "TypeScript"],
         "url": "https://jlalbany.netlify.app/",
         "date": "Janvier 2024",
@@ -28,25 +27,27 @@
         "images": [
           {
             "src": "assets/jlalbany/jlu2024desk.png",
-            "title": "Vue Desktop Réactive",
-            "description": ""
+            "title": "Vue Réactive sur Desktop",
+            "description": "",
+            "style": "style",
+            "tech": "techno"
           },
           {
             "src": "assets/jlalbany/NEW_JLALBANY 2 Y GREY.png",
-            "title": "Le logo de la marque a été repensé et modernisé",
+            "title": "Le logo de la marque a été modernisé",
             "description": ""
           },
           {
             "src": "assets/jlalbany/jlu2024mob.png",
-            "title": "Vue Mobile Réactive",
+            "title": "Vue Réactive sur Mobile",
             "description": ""
           }
         ]
       },
       {
         "name": "Sasha Yoga Flow",
-        "title": "Site Web de Yoga Réactif avec Réservation en Ligne",
-        "description": "Sasha Yoga Flow est un site web serein et accueillant dédié à la pratique et à l'enseignement du yoga. Avec des tons terreux neutres et une ambiance fluide et naturelle, le site web reflète l'essence du yoga. Il propose des mises en page simples et faciles à naviguer, combinant des éléments de design calmes et sereins avec une fonctionnalité intuitive. L'utilisation de textures organiques et de palettes de couleurs douces évoque un sentiment de tranquillité et d'équilibre, en faisant l'espace parfait pour guider les utilisateurs dans leur parcours de yoga. Le site web, destiné à un public parisien, offre des informations sur les horaires des cours, les emplacements et permet la réservation en ligne des ateliers.",
+        "title": "Site Web de Yoga Responsive avec Réservation en Ligne",
+        "description": "Sasha Yoga Flow est un site web serein et accueillant dédié à la pratique et à l'enseignement du yoga. Avec des tons neutres terreux et une ambiance fluide, naturelle, le site reflète l'essence du yoga. Il propose des layouts simples et faciles à naviguer, combinant des éléments de design calmes et sereins avec une fonctionnalité intuitive. L'utilisation de textures organiques et de palettes de couleurs douces évoque un sentiment de tranquillité et d'équilibre, faisant de ce site l'espace parfait pour guider les utilisateurs dans leur parcours de yoga. Le site, destiné à un public parisien, offre des informations sur les horaires des cours, les emplacements et permet la réservation en ligne de sessions.",
         "techno": ["SASS", "Vite", "React", "TypeScript"],
         "url": "https://sashayogaflow.netlify.app/",
         "date": "Février 2024",
@@ -59,7 +60,7 @@
           },
           {
             "src": "assets/sashayogaflow/SASHA LOGO HIRES_square terracotta bg white logo.png",
-            "title": "Le logo a également été repensé",
+            "title": "Le logo a aussi été redessiné",
             "description": ""
           },
           {
@@ -70,16 +71,12 @@
         ]
       }
     ],
-
-    "visit": "visiter",
-    "published": "publié en",
-    "style":"style",
-    "tech":"techno"
-
+    "visit": "Visiter",
+    "published": "Publié en"
   },
   "contact": {
     "title": "Contact",
-    "successMessage": "Votre message a été envoyé avec succès!",
+    "successMessage": "Votre message a été envoyé avec succès !",
     "emailLabel": "Email",
     "emailPlaceholder": "Entrez votre email",
     "nameLabel": "Nom",
@@ -88,9 +85,11 @@
     "messagePlaceholder": "Entrez votre message",
     "submitButton": "Envoyer",
     "errorTitle": "Oups",
-    "errorMessage": "Il y a un petit soucis avec l'adresse e-mail, pourriez-vous re-vérifier?",
+    "errorMessage": "Il y a un souci avec l'adresse email saisie, pourriez-vous la vérifier ?",
     "content": [
-      "Que vous cherchiez à collaborer, que vous ayez une question, ou simplement envie de partager vos réflexions, je suis toujours ravi d'avoir de vos nouvelles."," Vos retours et questions sont précieux car ils m'aident à progresser et à m'améliorer."," N'hésitez pas à me contacter — commençons une conversation et créons ensemble quelque chose de formidable !"
+      "Que vous cherchiez à collaborer, que vous ayez une question, ou simplement envie de partager vos réflexions, je suis toujours heureuse de recevoir de vos nouvelles.",
+      "Vos retours et questions sont précieux car ils m'aident à progresser et à m'améliorer.",
+      "N'hésitez pas à me contacter — commençons une conversation et créons ensemble quelque chose de formidable !"
     ]
   }
 }

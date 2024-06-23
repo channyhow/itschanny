@@ -117,6 +117,8 @@ const About = ({ section }: CommonPageProps) => {
           }}
         >
           {t(`${section.id}.title`)}
+          {/* {t(`${section.title}`)} */}
+
         </h1>
         <button onClick={handleGridToggle} style={buttonStyle}>
           <h5 style={buttonText}>

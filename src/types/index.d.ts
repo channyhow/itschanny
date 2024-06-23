@@ -25,23 +25,24 @@ export interface ContainerProps {
 
 // Props for sections of a page// Props for sections of a page
 export interface SectionProps {
-  content: string[];
-  id: string;
   title: string;
-  children?: ReactNode;
-  backgroundColor?: string;
-  headerBackgroundColor?: string; // Add this line
-  color: string;
-  padding: string;
+  id: string;
   sectionColor: string;
-  containerColor: string;
+  containerColor?: string; // Making it optional if it's not consistently used
+  color: string;
   headerColor: string;
   languageColor: string;
+  padding: string;
   margin: string;
-  height: string;
-  style: CSSProperties;
-  className?: string;
+  height?: string; // Optional if not mandatory for all sections
+  style?: React.CSSProperties; // Using React's CSSProperties type for style
+  content: string[]; // Ensuring this is always an array for consistency
 }
+
+export interface BodyContentProps {
+  sections: SectionProps[];
+}
+
 
 
 // Props for SectionComponent
@@ -102,10 +103,6 @@ export interface ShellProps extends WrapperProps {
   className: string;
 }
 
-// Props for the main content body that might include multiple sections
-export interface BodyContentProps {
-  sections: SectionProps[];
-}
 
 // General props for pages received from routing
 export interface PageProps {

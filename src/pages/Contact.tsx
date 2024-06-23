@@ -1,13 +1,20 @@
+// If considering removing sectionData, your component might look simplified like this:
 import ContactForm from "../components/ContactForm";
-import { CommonPageProps } from "../types";
 import { useTranslation } from "react-i18next";
 import Container from "../components/Container";
 import { useMediaQuery } from "@mui/material";
+import { CommonPageProps } from "../types";
+// import useCurrentSectionData from "../hooks/useCurrentSectionData";
 
 const Contact = ({ section }: CommonPageProps) => {
   const { t } = useTranslation();
   const isMobile = useMediaQuery("(max-width:768px)");
-  console.log(section);
+  // const sectionData = useCurrentSectionData(section.id);
+
+  const contentArray = t(`${section.id}.content`, {
+    returnObjects: true,
+  }) as string[];
+
   return (
     <Container>
       <h1
@@ -18,20 +25,20 @@ const Contact = ({ section }: CommonPageProps) => {
           marginBottom: "20px",
         }}
       >
-        {t(`${section.id}.title`)}
+        {t(section.title)}{" "}
       </h1>
       <div
         style={{
           display: "flex",
           flexDirection: isMobile ? "column" : "row",
           width: "100%",
-          justifyContent: isMobile ? "center" : "space-between"
+          justifyContent: isMobile ? "center" : "space-between",
         }}
       >
         <div style={{ maxWidth: "400px" }}>
-          {" "}
-          {/* Assuming you might want to limit the width for better readability */}
-          <p>{t(`${section.content}`)}</p>
+          {contentArray.map((item) => (
+            <p> {item}</p>
+          ))}
         </div>
         <ContactForm section={section} />
       </div>

@@ -16,7 +16,7 @@
   "projects": {
     "title": "Projects",
     "items": [
-     {
+      {
         "name": "JL Albany",
         "title": "Jean-Ludovic Albany Portfolio",
         "description": "Jean-Ludovic Albany is a Paris-based advertising tracking expert. His portfolio showcases his expertise in a straightforward and graphic manner. The design is simple yet effective, featuring off-white, black, grey, and sunny yellow colors. The responsive website is designed to be visually appealing across all devices. The logo has been redesigned to fit JL's mindset and branding.",
@@ -39,8 +39,8 @@
             "src": "assets/jlalbany/jlu2024mob.png",
             "title": "Responsive Website Mobile View",
             "description": "",
-            "style":"style",
-            "tech":"techno"
+            "style": "style",
+            "tech": "techno"
           }
         ]
       },
@@ -88,7 +88,8 @@
     "errorMessage": "There’s something about the email address entered, could you have a quick look?",
     "content": [
       "Whether you're looking for collaboration, have a question, or just want to share your thoughts,",
-      "I'm always eager to hear from you. Your feedback and inquiries are invaluable as they help me grow and improve.", "Don't hesitate to reach out — let's start a conversation and make something great together!"
+      "I'm always eager to hear from you. Your feedback and inquiries are invaluable as they help me grow and improve.",
+      "Don't hesitate to reach out — let's start a conversation and make something great together!"
     ]
   }
 }
