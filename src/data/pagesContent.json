@@ -14,7 +14,10 @@
         "Driven by the belief that design can inspire diversity and innovation",
         "As I continue to learn and grow.",
         "Let's connect and transform ideas into reality."
-      ]
+      ],  
+      "children": "",
+      "backgroundColor": "",
+      "className": ""
     },
     {
       "title": "About",
@@ -31,7 +34,10 @@
         "Now, I'm a Paris-based front-end developer and designer, passionate about creating visually appealing and responsive applications. My toolkit includes React, TypeScript, and Sass, with a particular fondness for clean design and functionality. While I occasionally dive into backend technologies like Node.js, Express, and PostgreSQL, my heart truly belongs to the front-end.",
         "Fluent in both English and French, I collaborate effortlessly in diverse environments. With a background that spans different continents and industries, I offer a fresh perspective and a versatile approach, bringing a balanced blend of creativity and precision to every project.",
         "When I'm not coding, you'll find me running with dogs or any other living being, staying active, or enjoying the outdoors. I'm always eager to learn and grow, ready to tackle new challenges and create user-friendly digital experiences. If you're looking for a developer who is dedicated and passionate about their craft, let's connect!"
-      ]
+      ],
+      "children": "",
+      "backgroundColor": "",
+      "className": ""
     },
     {
       "title": "Projects",
@@ -42,7 +48,10 @@
       "color": "#FFFFFF",
       "padding": "40px auto",
       "margin": "",
-      "content": []
+      "content": [],
+      "children": "",
+      "backgroundColor": "#07A0C3",
+      "className": ""
     },
     {
       "title": "Contact",
@@ -56,7 +65,10 @@
       "content": [
         "Whether you're looking for collaboration, have a question, or just want to share your thoughts,",
         "I'm always eager to hear from you. Your feedback and inquiries are invaluable as they help me grow and improve.", "Don't hesitate to reach out — let's start a conversation and make something great together!"
-      ]
+      ],
+      "children": "",
+      "backgroundColor": "",
+      "className": ""
     }
   ]
 }

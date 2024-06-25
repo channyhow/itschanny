@@ -33,7 +33,7 @@ const SectionComponent = React.forwardRef<HTMLElement, SectionComponentProps>(
       width: "100vw", // full width of the viewport
       justifyContent: "center",
       minHeight: "90vh",
-      padding:"40px 10px",
+      padding:"60px 10px",
       height: "100%",
       display: "flex",
       flexDirection: "column",
@@ -49,7 +49,7 @@ const SectionComponent = React.forwardRef<HTMLElement, SectionComponentProps>(
         padding={section.padding}
         color={section.color}
         style={sectionStyle}
-        className={""} content={[]}      >
+        className={""} content={[]} sectionColor={""} headerColor={""} languageColor={""} margin={""}   >
         <ContentComponent section={section} sectionId={section.id} />
       </Section>
     );

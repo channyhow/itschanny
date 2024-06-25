@@ -5,7 +5,6 @@ import { ImageModalProps } from "../../types";
 import { useMediaQuery } from "@mui/material";
 import { SliderNav } from "../PrevNextButtons";
 import { useTranslation } from "react-i18next";
-// import { projectContent } from "../../data/ProjectContent";
 
 const ImageModal: React.FC<ImageModalProps> = ({
   open,
@@ -13,6 +12,7 @@ const ImageModal: React.FC<ImageModalProps> = ({
   data,
   currentProject,
   setCurrentProject,
+  section,
 }) => {
   const isMobile = useMediaQuery("(max-width:768px)");
   const { t } = useTranslation();
@@ -26,22 +26,14 @@ const ImageModal: React.FC<ImageModalProps> = ({
     setHoveredButton(false);
   };
 
-  const getBackground = (palette: string[]) => {
-    return `radial-gradient(circle at 80% 120%, ${palette[1]} 0%, ${palette[2]} 20%, ${palette[2]} 40%, ${palette[0]} 80%),
-            radial-gradient(circle at 70% 80%, ${palette[2]} 0%, ${palette[2]} 20%, ${palette[2]} 40%, ${palette[2]} 80%),
-            radial-gradient(circle at 50% 100%, ${palette[2]} 0%, ${palette[2]} 20%, ${palette[2]} 40%, ${palette[1]} 80%)`;
-  };
-
   const style = {
     position: "absolute" as const,
     width: "95%",
     maxWidth: "1400px",
     maxHeight: "95vh",
     overflowY: "auto" as const,
-    background: data[currentProject].palette
-      ? getBackground(data[currentProject].palette)
-      : "white",
-    padding: "5%",
+    background: section.sectionColor,
+    padding: isMobile ? "5%" : "5% 10%",
     border: "2px solid rgb(214 243 55)",
     margin: "0 1rem",
     boxShadow: 24,
@@ -58,6 +50,7 @@ const ImageModal: React.FC<ImageModalProps> = ({
     alignItems: "center",
     justifyContent: "center",
     width: "100%",
+    color: section.color,
   };
 
   const imageStyle: React.CSSProperties = {
@@ -73,7 +66,6 @@ const ImageModal: React.FC<ImageModalProps> = ({
     textAlign: isMobile ? "center" : "right",
     padding: "0.5rem",
     width: "100%",
-    color: "rgb(102, 97, 83)",
   };
 
   const headerStyle: React.CSSProperties = {
@@ -130,13 +122,6 @@ const ImageModal: React.FC<ImageModalProps> = ({
     gap: "2rem",
   };
 
-  console.log(
-    "current project",
-    currentProject,
-    "description",
-    data[currentProject].description,
-    data[currentProject].images[0].title
-  );
   return (
     <Modal
       open={open}
@@ -156,6 +141,7 @@ const ImageModal: React.FC<ImageModalProps> = ({
             width: "100%",
             display: "flex",
             justifyContent: "space-between",
+            marginBottom: "10px",
           }}
         >
           <h6>{data[currentProject].name}</h6>
@@ -164,9 +150,10 @@ const ImageModal: React.FC<ImageModalProps> = ({
             currentProject={currentProject}
             setCurrentProject={setCurrentProject}
             projects={data}
+            color={section.color}
           />
         </div>
-{/* photo 1 */}
+        {/* photo 1 */}
         <figure style={desktopStyle}>
           <img
             src={data[currentProject].images[0].src}
@@ -175,14 +162,15 @@ const ImageModal: React.FC<ImageModalProps> = ({
           />
           <figcaption style={figcaptionStyle}>
             <h6>
-            {t(`projects.items.${currentProject}.images.0.title`)} -{" "}
+              {t(`projects.items.${currentProject}.images.0.title`)} |{" "}
               {t(`projects.items.${currentProject}.images.0.description`)}
             </h6>
+
             <h6>1/{data[currentProject].images.length}</h6>
           </figcaption>
         </figure>
 
-{/* header */}
+        {/* header */}
         <header style={headerStyle}>
           <h5>
             {t("projects.published")}{" "}
@@ -220,7 +208,7 @@ const ImageModal: React.FC<ImageModalProps> = ({
             </div>
           </a>
         </header>
-{/* info grid */}
+        {/* info grid */}
         <div style={infoSectionStyle} className="info-section">
           <div style={{ marginBottom: "10px", order: isMobile ? "3" : "" }}>
             <h5 style={{ marginBottom: "5px", fontWeight: "500" }}>
@@ -231,7 +219,9 @@ const ImageModal: React.FC<ImageModalProps> = ({
               {data[currentProject].techno.map(
                 (techno: string, index: number) => (
                   <li key={index}>
-                  <h4>{t(`projects.items.${currentProject}.techno.${index}`)}</h4>
+                    <h4>
+                      {t(`projects.items.${currentProject}.techno.${index}`)}
+                    </h4>
                   </li>
                 )
               )}
@@ -242,7 +232,7 @@ const ImageModal: React.FC<ImageModalProps> = ({
             <h5 style={{ marginBottom: "5px", fontWeight: "500" }}>
               {t(`projects.items.${currentProject}.title`)}
             </h5>
-            <p style={{ marginBottom: "5px", color: "#666153" }}>
+            <p style={{ marginBottom: "5px" }}>
               {t(`projects.items.${currentProject}.description`)}
             </p>
           </div>
@@ -262,7 +252,7 @@ const ImageModal: React.FC<ImageModalProps> = ({
         </div>
 
         <div style={gridStyle}>
-                  {/* photo 2 */}
+          {/* photo 2 */}
           <figure style={logoStyle}>
             <img
               src={data[currentProject].images[1].src}

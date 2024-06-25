@@ -1,11 +1,11 @@
 import { CSSProperties, ReactNode, RefObject } from "react";
 
 // Configuration for any grid layout
-export interface GridConfig {
-  columns: number;
-  rows: number;
-  gap: string;
-}
+// export interface GridConfig {
+//   columns: number;
+//   rows: number;
+//   gap: string;
+// }
 
 export interface UseCurrentSectionReturn {
   currentSection: string;
@@ -28,31 +28,34 @@ export interface SectionProps {
   title: string;
   id: string;
   sectionColor: string;
-  containerColor?: string; // Making it optional if it's not consistently used
+  // containerColor: string; // Making it optional if it's not consistently used
   color: string;
   headerColor: string;
   languageColor: string;
   padding: string;
   margin: string;
-  height?: string; // Optional if not mandatory for all sections
-  style?: React.CSSProperties; // Using React's CSSProperties type for style
+  height: string; // Optional if not mandatory for all sections
+  style: React.CSSProperties; // Using React's CSSProperties type for style
   content: string[]; // Ensuring this is always an array for consistency
+
+  children: ReactNode;
+  backgroundColor: string;
+  className: string;
 }
 
+// Props for SectionComponent
+export interface SectionComponentProps {
+  section: SectionProps[];
+  ref: RefObject<HTMLElement>;
+  className: string;
+  currentSection: string;
+  updateSection: (newSection: string) => void;
+}
 export interface BodyContentProps {
   sections: SectionProps[];
 }
 
 
-
-// Props for SectionComponent
-export interface SectionComponentProps {
-  section: SectionProps;
-  ref: RefObject<HTMLElement>;
-  className?: string;
-  currentSection: string;
-  updateSection: (newSection: string) => void;
-}
 
 // Props for Header component
 export interface HeaderProps {
@@ -102,7 +105,6 @@ export interface ShellProps extends WrapperProps {
   currentSection: string;
   className: string;
 }
-
 
 // General props for pages received from routing
 export interface PageProps {
@@ -166,7 +168,7 @@ export interface ProjectData {
 
 // Props for project gallery component
 export interface ProjectGalleryProps {
-  section?: PageProps;
+  section: SectionProps;
 }
 
 // Props for image modal component
@@ -176,7 +178,8 @@ export interface ImageModalProps {
   data: ProjectData[];
   currentProject: number;
   setCurrentProject: (index: number) => void;
-  section?: PageProps;
+  section: SectionProps;
+  
 }
 
 // Type for page components

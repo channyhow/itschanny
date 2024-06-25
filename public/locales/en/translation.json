@@ -1,7 +1,11 @@
 {
   "home": {
     "title": "Hi I'm Channy",
-    "content": "Your local front end developer, driven by the belief that design can inspire diversity and innovation, as I continue to learn and grow. Let's connect and transform ideas into reality.",
+    "content": [
+      "Your local front end developer,",   
+      "Love making things responsive.",
+      "Based in Paris."
+    ],
     "call_to_action": "Let's connect and transform ideas into digital reality"
   },
   "about": {

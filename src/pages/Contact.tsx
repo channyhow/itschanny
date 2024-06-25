@@ -9,11 +9,12 @@ import { CommonPageProps } from "../types";
 const Contact = ({ section }: CommonPageProps) => {
   const { t } = useTranslation();
   const isMobile = useMediaQuery("(max-width:768px)");
-  // const sectionData = useCurrentSectionData(section.id);
 
   const contentArray = t(`${section.id}.content`, {
     returnObjects: true,
   }) as string[];
+
+  const content = Array.isArray(contentArray) ? contentArray : [];
 
   return (
     <Container>
@@ -25,7 +26,7 @@ const Contact = ({ section }: CommonPageProps) => {
           marginBottom: "20px",
         }}
       >
-        {t(section.title)}{" "}
+        {t(`${section.id}.title`)}{" "}
       </h1>
       <div
         style={{
@@ -35,9 +36,12 @@ const Contact = ({ section }: CommonPageProps) => {
           justifyContent: isMobile ? "center" : "space-between",
         }}
       >
-        <div style={{ maxWidth: "400px" }}>
-          {contentArray.map((item) => (
-            <p> {item}</p>
+        <div style={{ maxWidth: "400px", width: isMobile? "100%": "50%", 
+                    marginBottom: isMobile?"20px":"0"
+
+         }}>
+          {content.map((item, index) => (
+            <p key={index}> {item}</p>
           ))}
         </div>
         <ContactForm section={section} />

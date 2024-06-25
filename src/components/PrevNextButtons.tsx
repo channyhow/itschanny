@@ -8,12 +8,14 @@ interface SliderNavProps {
   projects: ProjectData[];
   currentProject: number;
   setCurrentProject: (index: number) => void;
+  color: string;
 }
 
 export const SliderNav = ({
   projects,
   currentProject,
   setCurrentProject,
+  color,
 }: SliderNavProps) => {
   const nextProject = () => {
     // Use modulo to wrap around if we exceed the last index
@@ -53,19 +55,18 @@ export const SliderNav = ({
         width: "auto",
         display: "flex",
         justifyContent: "flex-end",
-        color: "rgb(102, 97, 83)",
       }}
       {...handlers}
     >
       <button
         onClick={prevProject}
-        style={{ background: "transparent", border: "none" }}
+        style={{ background: "transparent", border: "none", color: color }}
       >
         <ArrowBackIcon sx={{ scale: "1.5", margin: "0  1rem 1rem 0" }} />
       </button>
       <button
         onClick={nextProject}
-        style={{ background: "transparent", border: "none" }}
+        style={{ background: "transparent", border: "none", color: color }}
       >
         <ArrowForwardIcon sx={{ scale: "1.5", margin: "0 0 1rem 1rem   " }} />
       </button>

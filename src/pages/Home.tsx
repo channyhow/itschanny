@@ -1,27 +1,29 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Container from "../components/Container";
 import { HashLink } from "react-router-hash-link";
-
-// Import your logos
-import logo from "./../assets/homepage_chow red logo eng.svg";
-import hoverLogo from "./../assets/homepage_chow red logo eng hover.svg";
-// import { useMediaQuery } from "@mui/material";
+import logo from "./../assets/itschanny branding/enchantée_chow red logo eng.svg";
+import hoverLogo from "./../assets/itschanny branding/enchantée_chow red logo eng hover.svg";
 import { useTranslation } from "react-i18next";
-// import useCurrentSectionData from "../hooks/useCurrentSectionData";
 import { CommonPageProps } from "../types";
+import { useMediaQuery } from "@mui/material";
 
 const Home = ({ section }: CommonPageProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  // const sectionData = useCurrentSectionData(section.id);
-  // const isMobile = useMediaQuery("(max-width:425px)");
   const { t } = useTranslation();
+  const isMobile = useMediaQuery("(max-width:768px)");
+
+  const contentArray = t(`${section.id}.content`, {
+    returnObjects: true,
+  }) as string[];
+  const content = Array.isArray(contentArray) ? contentArray : [];
+  console.log("home content",section)
 
   return (
     <Container>
       <HashLink smooth to="#contact" style={{ 
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
+          justifyContent: "flex-end",
           alignItems: "center",
           width: "100%", // This ensures the container takes up full width
           textDecoration: "none" // Remove text decoration from HashLink
@@ -31,20 +33,23 @@ const Home = ({ section }: CommonPageProps) => {
       >
         <img 
           src={isHovered ? hoverLogo : logo}
-          alt="Channy's Home Logo" // Meaningful alt text
+          alt="Channy's Home Logo"
           style={{
-            width: "100%",  // Make SVG responsive
+            width: "100%",  // Set to 80% or another value that fits your design
             height: "auto", // Maintain aspect ratio
-            // maxWidth: "1000px", // Limit the size to a maximum
-            transition: "all 0.5s ease"
+            maxWidth: "900px", // Adjust maximum width as needed
+            transition: "all 0.5s ease",
+            marginBottom:isMobile ? "2rem":"1rem"
           }}
         />
-      </HashLink>
-      <div style={{width:"100%", display:"flex", justifyContent:"flex-end"}}>
-        <h6 style={{width:"50%", textAlign:"right"}}>
-        {t(`${section.content}`)}
-          </h6>
-      </div>
+            <div style={{display:"flex", flexDirection:"column",alignItems:"flex-end", width:'100%'}}>  
+
+          {content.map((item, index) => (
+            <div style={{display:"flex", flexDirection:"column"}}>
+            <h6 key={index} style={{}}>{item}</h6></div>
+          ))}
+        </div>  
+        </HashLink>
     </Container>
   );
 };

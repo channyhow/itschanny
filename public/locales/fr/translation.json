@@ -1,13 +1,13 @@
 {
   "home": {
     "title": "Salut, c'est Channy",
-    "content": "Développeuse front-end locale, animée par la conviction que le design peut inspirer la diversité et l'innovation. Continuellement en apprentissage, transformons ensemble les idées en réalité.",
+    "content": ["Développeuse front-end,","J'aime rendre les designs réactifs.", "Basée à Paris."],
     "call_to_action": "Connectons-nous et transformons les idées en réalité numérique."
   },
   "about": {
     "title": "À propos",
     "content": [
-      "Salut, je suis Channy, originaire de l'île de la Réunion. Au cours de la dernière décennie, mes aventures m'ont amenée à travers l'Asie et l'Australie, où j'ai affiné mes compétences en design de chaussures, mêlant esthétique et fonctionnalité. La pandémie m'a ramenée en France et a ouvert un nouveau chapitre dans le domaine de la technologie.",
+      "Bonjour, je suis Channy, originaire de l'île de la Réunion. Au cours de la dernière décennie, mes aventures m'ont amenée à travers l'Asie et l'Australie, où j'ai affiné mes compétences en design de chaussures, mêlant esthétique et fonctionnalité. La pandémie m'a ramenée en France et a ouvert un nouveau chapitre dans le domaine de la technologie.",
       "Je suis maintenant développeuse et designer front-end basée à Paris, passionnée par la création d'applications visuellement attrayantes et réactives. Mon arsenal d'outils comprend React, TypeScript et Sass, avec un goût particulier pour le design épuré et fonctionnel. Bien que je plonge occasionnellement dans les technologies backend telles que Node.js, Express et PostgreSQL, mon cœur est véritablement ancré dans le front-end.",
       "Fluente en anglais et en français, je collabore sans effort dans des environnements diversifiés. Avec un parcours qui couvre différents continents et secteurs, j'apporte une perspective fraîche et une approche polyvalente, en conjuguant créativité et précision dans chaque projet.",
       "Lorsque je ne code pas, vous pouvez me trouver en train de courir avec des chiens ou toute autre créature vivante, en restant active ou en profitant du plein air. Toujours avide d'apprendre et de grandir, je suis prête à relever de nouveaux défis et à créer des expériences digitales conviviales. Si vous recherchez une développeuse dédiée et passionnée par son métier, connectons-nous !"
