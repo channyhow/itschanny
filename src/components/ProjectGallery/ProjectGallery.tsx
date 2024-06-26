@@ -45,11 +45,9 @@ export default function ProjectGallery({ section }: ProjectGalleryProps) {
         flexWrap: isMobile ? "wrap" : "nowrap",
         justifyContent: isMobile ? "center" : "space-between",
         width: "100%", // full width of the viewport
-        // minWidth:"300px",
-        // maxWidth: "1200px",
       }}
     >
-      {projectContent.map((item, index) => (
+      {projectContent.items.map((item, index) => (
         <div key={index} style={{ position: "relative" }}>
           <figure
             onMouseEnter={() => handleMouseEnter(index)}
@@ -129,9 +127,9 @@ export default function ProjectGallery({ section }: ProjectGalleryProps) {
                   {t(`projects.items.${index}.date`)}
                 </h6>
                 <div style={{ display: "flex" }}>
-                  {item.techno.map((tech, techIndex) => (
+                  {item.techno.map((tech:string, index:number) => (
                     <h6
-                      key={techIndex}
+                      key={index}
                       style={{ color: section?.color, marginRight: "0.5rem" }}
                     >
                       {tech}
@@ -168,11 +166,15 @@ export default function ProjectGallery({ section }: ProjectGalleryProps) {
         <ImageModal
           open={open}
           handleClose={handleClose}
-          data={projectContent}
-          currentProject={currentItem}
-          setCurrentProject={setCurrentItem}
-          section={section}
-        />
+          projectData={projectContent}
+          current={currentItem}
+          setCurrent={setCurrentItem}
+          section={section}    
+          visit={projectContent.visit}
+          published={projectContent.published}
+          style={projectContent.style}
+          tech={projectContent.tech}
+          />
       }
     </article>
   );

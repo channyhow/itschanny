@@ -42,9 +42,7 @@
           {
             "src": "assets/jlalbany/jlu2024mob.png",
             "title": "Responsive Website Mobile View",
-            "description": "",
-            "style": "style",
-            "tech": "techno"
+            "description": ""
           }
         ]
       },
@@ -76,7 +74,9 @@
       }
     ],
     "visit": "Visit",
-    "published": "Published in"
+    "published": "Published in",
+    "style":"style",
+    "tech":"techno"
   },
   "contact": {
     "title": "Contact",
