@@ -10,7 +10,7 @@ export default function Header({
   currentSection,
   style
 }: HeaderProps) {
-  const isMobile = useMediaQuery("(max-width:425px)");
+  const isMobile = useMediaQuery("(max-width:768px)");
   const { t } = useTranslation();
 
   const renderSections = () => {
