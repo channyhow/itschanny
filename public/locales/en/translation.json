@@ -2,7 +2,7 @@
   "home": {
     "title": "Hi I'm Channy",
     "content": [
-      "Your local front end developer,",   
+      "Your local front end developer,",
       "Love making things responsive.",
       "Based in Paris."
     ],
@@ -11,10 +11,10 @@
   "about": {
     "title": "About",
     "content": [
-      "Hi, I'm Channy, originally from Reunion Island. Over the past decade, my adventures have taken me across Asia and Australia, where I honed my skills in footwear design, blending aesthetics with practicality. The pandemic brought me back to France and opened up a new chapter in technology.",
-      "Now, I'm a Paris-based front-end developer and designer, passionate about creating visually appealing and responsive applications. My toolkit includes React, TypeScript, and Sass, with a particular fondness for clean design and functionality. While I occasionally dive into backend technologies like Node.js, Express, and PostgreSQL, my heart truly belongs to the front-end.",
-      "Fluent in both English and French, I collaborate effortlessly in diverse environments. With a background that spans different continents and industries, I offer a fresh perspective and a versatile approach, bringing a balanced blend of creativity and precision to every project.",
-      "When I'm not coding, you'll find me running with dogs or any other living being, staying active, or enjoying the outdoors. I'm always eager to learn and grow, ready to tackle new challenges and create user-friendly digital experiences. If you're looking for a developer who is dedicated and passionate about their craft, let's connect!"
+      "Hi, I'm Channy, a Paris-based front-end developer and designer passionate about creating visually appealing and responsive applications. My toolkit includes React, TypeScript, and Sass, with a particular fondness for clean design and functionality. While I occasionally dive into backend technologies like Node.js, Express, and PostgreSQL, my heart truly belongs to the front-end.",
+      "Over the past decade, my adventures across Asia and Australia have enriched my experience in footwear design, blending aesthetics with practicality. The pandemic brought me back to France, opening a new chapter in technology.",
+      "Fluent in both English and French, I effortlessly collaborate in diverse environments. With a background spanning different continents and industries, I offer a versatile approach, balancing creativity and precision in every project.",
+      "When I'm not coding, you'll find me running with dogs or any other living beings, staying active, or developing other projects. I love learning new things and taking on new challenges to create great digital experiences. If you're looking for a dedicated and passionate developer, let's connect!"
     ]
   },
   "projects": {
@@ -75,8 +75,8 @@
     ],
     "visit": "Visit",
     "published": "Published in",
-    "style":"style",
-    "tech":"techno"
+    "style": "style",
+    "tech": "techno"
   },
   "contact": {
     "title": "Contact",
