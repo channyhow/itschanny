@@ -10,7 +10,7 @@ interface LanguageSwitcherProps {
 const LanguageSwitcher = ({color}: LanguageSwitcherProps) => {
   const { i18n } = useTranslation();
   const [hoveredButton, setHoveredButton] = useState<string | null>(null);
-  const isMobile = useMediaQuery("(max-width:768px)");
+  const isMobile = useMediaQuery("(max-width:1290px)");
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
